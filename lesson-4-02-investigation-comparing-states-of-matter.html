@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Investigation: Comparing States of Matter</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif; background: #F4F0EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); color: #2B1D12; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF7F3; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+.header { background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%); border-bottom: 6px solid #55C8E8; padding: 22px 28px 24px; position: relative; overflow: hidden; }
+.header::after { content: ''; position: absolute; bottom: 6px; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #55C8E8, #34B76F, #55C8E8); }
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo { width: 52px; height: 52px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title { font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px; text-shadow: 0 2px 12px rgba(85,200,232,0.3); }
+.header-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(85,200,232,0.15); border: 1.5px solid rgba(85,200,232,0.35); border-radius: 28px; padding: 6px 16px; }
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+.hero-visual { background: linear-gradient(180deg, #070a12 0%, #0e1829 60%, #1a2540 100%); padding: 0; position: relative; overflow: hidden; border-bottom: 3px solid #55C8E8; }
+.hero-visual svg { display: block; width: 100%; height: auto; }
+.info-strip { display: flex; flex-wrap: wrap; background: #fff; border-bottom: 2px solid #E8DDD2; }
+.info-item { flex: 1; min-width: 150px; padding: 12px 16px; border-right: 1px solid #E8DDD2; display: flex; align-items: center; gap: 10px; }
+.info-item:last-child { border-right: none; }
+.info-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+.card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 22px; overflow: hidden; box-shadow: 0 2px 12px rgba(43,29,18,0.04); }
+.card-head { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-bottom: 2px solid; }
+.card-head-icon { width: 42px; height: 42px; border-radius: 50%; color: #fff; font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+.theme-earth .card-head { background: #FFF7EE; border-color: #F0DCC4; }
+.theme-earth .card-head-icon { background: #C7922C; }
+.theme-sky .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky .card-head-icon { background: #55C8E8; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #34B76F; }
+.theme-rock .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock .card-head-icon { background: #8B6FC0; }
+.theme-magma .card-head { background: #FFF3DC; border-color: #F5E6C8; }
+.theme-magma .card-head-icon { background: #D4772C; }
+.activity-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(43,29,18,0.04); }
+.activity-card.act-warmup  { border-left: 6px solid #E8636B; }
+.activity-card.act-lesson  { border-left: 6px solid #D4772C; }
+.activity-card.act-explore { border-left: 6px solid #55C8E8; }
+.act-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px 14px 18px; border-bottom: 1.5px solid #E8DDD2; }
+.act-num { width: 38px; height: 38px; border-radius: 14px; color: #fff; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.act-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; margin-left: auto; flex-shrink: 0; }
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.callout { border-radius: 14px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-sky    { background: #EAF8FD; border: 2px solid #D6F2FB; }
+.callout-think  { background: #FFF7EE; border: 2px solid #F0DCC4; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.socratic-q { background: linear-gradient(135deg, #FFF7EE, #FFF3E0); border: 2px solid #E8C88A; border-radius: 16px; padding: 16px 20px; margin: 16px 0; display: flex; align-items: flex-start; gap: 12px; }
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label { font-size: 11px; color: #C7922C; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+.socratic-q .question { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; font-style: italic; }
+.key-concept { background: #EAF8FD; border: 2px solid #D6F2FB; border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
+.key-concept .kc-label { font-size: 13px; color: #2A8DB5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px; }
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+.pq { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; }
+.pq-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 14px; margin-right: 8px; vertical-align: middle; }
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+.vocab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+.flip-card { perspective: 800px; height: 160px; cursor: pointer; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s ease; transform-style: preserve-3d; }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 18px 20px; text-align: center; border: 2px solid #E8DDD2; box-shadow: 0 2px 10px rgba(43,29,18,0.06); }
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #0E1C42; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back { background: linear-gradient(145deg, #0E1C42, #1A2D5A); border-color: #0E1C42; transform: rotateY(180deg); }
+.flip-card-back .fc-def { font-size: 15px; color: #fff; line-height: 1.6; font-weight: 600; }
+.flip-card-back .fc-word-back { font-size: 11px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 8px; }
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #55C8E8; }
+.fc-color-2 .flip-card-front { border-top-color: #34B76F; }
+.fc-color-3 .flip-card-front { border-top-color: #C7922C; }
+.fc-color-4 .flip-card-front { border-top-color: #8B6FC0; }
+.fc-color-5 .flip-card-front { border-top-color: #E8636B; }
+.fc-color-6 .flip-card-front { border-top-color: #D4772C; }
+.vtip { position: relative; color: #8B6FC0; font-weight: 700; cursor: help; border-bottom: 2px dotted rgba(139,111,192,0.45); transition: color 0.15s; }
+.vtip:hover { color: #6B4FA0; }
+.vtip .vtip-box { position: fixed; background: #0E1C42; color: #fff; padding: 12px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; font-style: normal; line-height: 1.55; width: 250px; text-align: center; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; pointer-events: none; z-index: 9999; box-shadow: 0 6px 24px rgba(14,28,66,0.35); border: 1.5px solid rgba(85,200,232,0.3); transform: translateY(6px); }
+.vtip .vtip-box::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 7px solid transparent; border-top-color: #0E1C42; }
+.vtip .vtip-word { font-size: 11px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block; }
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+.go-deeper { background: linear-gradient(135deg, #F0EDF6, #E8E2F2); border: 2px solid #D8D0E8; border-radius: 16px; margin: 16px 0; overflow: hidden; }
+.go-deeper summary { padding: 14px 18px; font-size: 16px; font-weight: 800; color: #0E1C42; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; }
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after { content: '▸'; margin-left: auto; font-size: 18px; color: #8B6FC0; transition: transform 0.3s; }
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body { padding: 4px 18px 16px; font-size: 15px; color: #5A4D3E; line-height: 1.7; border-top: 1.5px solid #D8D0E8; }
+.go-deeper .gd-body p { margin-bottom: 10px; }
+.mind-blow { background: linear-gradient(135deg, #0a0e1a, #0E1C42); border: 2px solid rgba(85,200,232,0.3); border-radius: 18px; padding: 18px 22px; margin: 18px 0; display: flex; align-items: flex-start; gap: 14px; position: relative; overflow: hidden; }
+.mind-blow::before { content: ''; position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; border-radius: 50%; background: radial-gradient(circle, rgba(85,200,232,0.15), transparent); }
+.mind-blow-icon { font-size: 36px; flex-shrink: 0; animation: mind-blow-bounce 2s ease-in-out infinite; }
+@keyframes mind-blow-bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+.mind-blow-content { flex: 1; }
+.mind-blow-label { font-size: 11px; color: #FFD700; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px; }
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #55C8E8; }
+.diagram-interactive { position: relative; }
+.diagram-interactive .hotspot { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+.diagram-interactive .hotspot:hover { opacity: 0.25; }
+.diagram-interactive .hotspot.active { opacity: 0.35; }
+.diagram-info-panel { background: #0E1C42; color: #fff; padding: 14px 20px; border-radius: 14px; font-size: 15px; line-height: 1.55; font-weight: 600; text-align: center; border: 1.5px solid rgba(85,200,232,0.3); box-shadow: 0 4px 16px rgba(0,0,0,0.2); margin: 10px 0 0; display: none; }
+.diagram-info-panel.visible { display: block; }
+.diagram-info-panel .dip-word { font-size: 11px; color: #FFD700; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px; }
+.student-chart-wrap { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 16px 18px; margin: 16px 0; }
+.student-chart-label { font-size: 13px; color: #5A4D3E; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 12px; }
+.student-chart { width: 100%; border-collapse: collapse; font-size: 15px; }
+.student-chart th { background: #0E1C42; color: #fff; padding: 10px 12px; text-align: left; font-size: 13px; font-weight: 700; border: 1px solid #1A2D5A; }
+.student-chart td { padding: 10px 12px; border: 1.5px dashed #D0C8BE; color: #5A4D3E; font-size: 15px; vertical-align: middle; }
+.student-chart td.row-label { background: #F0EDE8; color: #0E1C42; font-weight: 700; border: 1px solid #E8DDD2; border-style: solid; }
+.student-chart tbody tr:nth-child(even) td:not(.row-label) { background: #F9F7F3; }
+.cer-block { background: #FAF7F3; border: 2px solid #8B6FC0; border-radius: 18px; padding: 22px 24px; margin-bottom: 22px; }
+.cer-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1.5px solid #E8DDD2; }
+.cer-icon { font-size: 28px; flex-shrink: 0; line-height: 1; }
+.cer-label { font-size: 11px; color: #8B6FC0; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+.cer-question { font-size: 18px; color: #0E1C42; font-weight: 700; line-height: 1.5; }
+.cer-section { display: flex; gap: 14px; margin-bottom: 18px; }
+.cer-badge { width: 32px; height: 32px; border-radius: 50%; color: #fff; font-size: 16px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.cer-badge-claim    { background: #E8636B; }
+.cer-badge-evidence { background: #D4772C; }
+.cer-badge-reason   { background: #34B76F; }
+.cer-section-body { flex: 1; }
+.cer-section-title { font-size: 16px; color: #0E1C42; font-weight: 800; margin-bottom: 8px; }
+.cer-section-hint { font-size: 13px; color: #9A8E82; font-weight: 600; }
+.cer-write-box { background: #fff; border: 2px dashed #E8DDD2; border-radius: 10px; padding: 14px; }
+.cer-starter { font-size: 14px; color: #C7922C; font-style: italic; margin: 0 0 10px; line-height: 1.5; }
+.cer-line { border-bottom: 1.5px solid #E8DDD2; height: 36px; margin-top: 2px; }
+.cer-vocab-check { background: #EAF8FD; border-radius: 10px; padding: 12px 14px; border-left: 3px solid #55C8E8; margin-top: 6px; font-size: 14px; color: #0E1C42; line-height: 1.5; }
+.revise-block { background: #FFF7EE; border: 2px solid #F0DCC4; border-radius: 16px; padding: 20px 22px; margin-bottom: 20px; }
+.revise-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.revise-icon { font-size: 28px; flex-shrink: 0; line-height: 1; }
+.revise-label { font-size: 11px; color: #C7922C; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+.revise-question { font-size: 17px; color: #0E1C42; font-weight: 700; line-height: 1.5; }
+.revise-prompts { font-size: 16px; color: #5A4D3E; line-height: 1.7; margin-bottom: 14px; }
+.revise-prompts ul { margin: 10px 0 0 20px; }
+.revise-prompts li { margin-bottom: 6px; }
+.response-q { margin: 10px 0 0; }
+.response-save-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #D0C8BE; margin-left: 6px; vertical-align: middle; transition: background 0.3s; flex-shrink: 0; }
+.response-save-dot.saved { background: #34B76F; }
+.response-textarea { width: 100%; min-height: 80px; padding: 10px 12px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #FAFAF6; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B1D12; resize: vertical; line-height: 1.65; transition: border-color 0.2s, box-shadow 0.2s; }
+.response-textarea:focus { outline: none; border-color: #55C8E8; box-shadow: 0 0 0 3px rgba(85,200,232,0.15); background: #fff; }
+.response-textarea.ta-sm { min-height: 64px; }
+.response-textarea.ta-lg { min-height: 110px; }
+.gathered-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin: 24px 0; overflow: hidden; box-shadow: 0 2px 12px rgba(43,29,18,0.06); }
+.gathered-header { background: linear-gradient(135deg, #0E1C42, #1A2D5A); padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+.gathered-header-icon { font-size: 24px; }
+.gathered-header-label { font-size: 10px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.gathered-header-title { font-size: 18px; color: #fff; font-weight: 800; line-height: 1.2; }
+.gathered-body { padding: 16px 20px 18px; }
+.gathered-intro { font-size: 14px; color: #5A4D3E; line-height: 1.6; margin-bottom: 12px; font-style: italic; }
+.gathered-name-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1.5px solid #E8DDD2; }
+.gathered-name-label { font-size: 13px; color: #0E1C42; font-weight: 800; white-space: nowrap; }
+.gathered-name-input { flex: 1; padding: 8px 12px; border: 1.5px solid #D0C8BE; border-radius: 8px; font-family: 'Nunito', sans-serif; font-size: 14px; color: #2B1D12; background: #FAFAF6; }
+.gathered-name-input:focus { outline: none; border-color: #55C8E8; background: #fff; }
+.gathered-output { width: 100%; min-height: 200px; padding: 12px 14px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #F4F0EB; font-family: 'Courier New', monospace; font-size: 13px; color: #2B1D12; resize: vertical; line-height: 1.6; white-space: pre-wrap; }
+.gathered-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.gathered-btn { background: #0E1C42; color: #fff; border: none; padding: 9px 18px; border-radius: 10px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+.gathered-btn:hover { background: #55C8E8; transform: translateY(-1px); }
+.gathered-btn-download { background: #34B76F; }
+.gathered-copied { display: none; margin-top: 8px; padding: 6px 12px; background: #EEF8F0; color: #1a6b35; border-radius: 8px; font-size: 13px; font-weight: 700; border: 1.5px solid #B8E8CF; }
+.gathered-copied.show { display: block; }
+.lesson-figure { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px; box-shadow: 0 2px 10px rgba(43,29,18,0.04); }
+.lesson-figure-label { font-size: 11px; color: #55C8E8; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; margin-bottom: 10px; }
+.lesson-figure img { display: block; max-width: 100%; height: auto; border-radius: 10px; margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.lesson-figure-caption { font-size: 14px; color: #5A4D3E; margin-top: 12px; line-height: 1.55; font-weight: 600; text-align: center; }
+.lesson-figure-caption strong { color: #0E1C42; }
+.image-suggestion { background: linear-gradient(135deg, #FFF3E0, #FFF8E1); border: 2.5px dashed #F9A825; border-radius: 16px; padding: 20px 22px; margin: 18px 0; text-align: center; }
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label { font-size: 11px; color: #E65100; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.image-suggestion-desc { font-size: 15px; color: #5A4D3E; line-height: 1.65; font-weight: 600; max-width: 680px; margin: 0 auto 12px; text-align: left; }
+.image-suggestion-file { font-size: 12px; color: #9A8E82; font-family: monospace; background: rgba(0,0,0,0.05); border-radius: 6px; padding: 4px 10px; display: inline-block; margin-top: 6px; }
+.video-wrap { border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2; box-shadow: 0 4px 20px rgba(43,29,18,0.08); background: #000; margin: 0 0 22px; }
+.video-wrap-header { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: linear-gradient(135deg, #0E1C42, #1A2D5A); border-bottom: 2px solid rgba(85,200,232,0.2); }
+.video-wrap-type { font-size: 10px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0e1829, #0E1C42); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+.video-placeholder-id { font-size: 11px; color: rgba(85,200,232,0.4); font-family: monospace; margin-top: 6px; }
+.progress-wrap { position: sticky; top: 0; z-index: 200; background: #0E1C42; padding: 8px 20px 10px; border-bottom: 2px solid rgba(85,200,232,0.3); display: flex; align-items: center; gap: 14px; }
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #55C8E8, #34B76F, #FFD700); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FFD700; font-weight: 800; min-width: 36px; text-align: right; }
+.tab-bar { position: sticky; top: 44px; z-index: 100; background: #FAF7F3; border-bottom: 3px solid #E8DDD2; display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn { flex: 1; min-width: 130px; padding: 12px 8px 11px; background: transparent; border: none; border-bottom: 4px solid transparent; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700; color: #9A8E82; cursor: pointer; transition: all 0.2s; white-space: nowrap; line-height: 1.3; text-align: center; }
+.tab-btn:hover { color: #0E1C42; background: #F0EDE8; }
+.tab-btn.active { color: #0E1C42; border-bottom-color: #55C8E8; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #34B76F; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+.tab-panel { display: none; padding: 24px 28px 36px; background: #ffffff; }
+.tab-panel.active { display: block; }
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after { content: '▾'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease; }
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip { display: inline-flex; align-items: center; gap: 5px; background: #EAF8FD; border: 1.5px solid #B8E2F0; border-radius: 20px; padding: 5px 12px; font-size: 13px; color: #0E1C42; font-weight: 700; }
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; background: linear-gradient(135deg, #55C8E8, #34B76F); color: #fff; border: none; border-radius: 28px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 16px rgba(85,200,232,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(85,200,232,0.45); }
+.turn-in-item { transition: background .2s, border-color .2s; }
+.turn-in-item:hover { background: #F0EDE8 !important; }
+.turn-in-item.checked { background: #EAF8FD !important; border-color: #B8E2F0 !important; }
+.turn-in-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+.turn-in-item.checked span:last-child { color: #5A4D3E; }
+.quiz-card { background: #fff; border: 2px solid #E8DDD2; border-left: 6px solid #F5A623; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(43,29,18,0.04); }
+.quiz-q { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 16px 18px; margin-bottom: 14px; }
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt { padding: 10px 16px; border-radius: 12px; border: 2px solid #E8DDD2; background: #fff; font-size: 15px; font-weight: 700; color: #2B1D12; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 10px; user-select: none; }
+.quiz-opt:hover { background: #EAF8FD; border-color: #55C8E8; }
+.quiz-opt.correct { background: #EEF8F0 !important; border-color: #34B76F !important; color: #1a6b35 !important; }
+.quiz-opt.wrong   { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+.quiz-opt .opt-letter { width: 28px; height: 28px; border-radius: 50%; background: #E8DDD2; color: #5A4D3E; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; }
+.quiz-opt.correct .opt-letter { background: #34B76F; color: #fff; }
+.quiz-opt.wrong .opt-letter   { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong   { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score { text-align: center; padding: 16px; background: linear-gradient(135deg, #EAF8FD, #D6F2FB); border: 2px solid #B8E8F5; border-radius: 14px; margin-top: 8px; display: none; }
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #0E1C42; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+.diagram-wrap { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 16px; margin: 16px 0; text-align: center; }
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption { font-size: 13px; color: #9A8E82; margin-top: 10px; font-weight: 600; }
+.back-to-top { position: fixed; bottom: 28px; right: 28px; height: 44px; padding: 0 18px 0 14px; border-radius: 22px; background: linear-gradient(135deg, #55C8E8, #34B76F); color: #fff; border: none; font-size: 14px; font-weight: 800; font-family: 'Nunito', sans-serif; cursor: pointer; box-shadow: 0 4px 18px rgba(85,200,232,0.35); display: flex; align-items: center; gap: 6px; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s; z-index: 500; letter-spacing: 0.3px; }
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 24px rgba(85,200,232,0.5); transform: translateY(-3px); }
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+.footer { background: #0E1C42; border-top: 4px solid #55C8E8; padding: 18px 28px; text-align: center; }
+.footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+.footer-line1 span { color: #55C8E8; font-weight: 700; }
+.footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+strong { color: #0E1C42; }
+em { color: #5A4D3E; }
+/* Hero animations */
+@keyframes hero-water-slosh { 0%,100%{transform:translateX(0)} 50%{transform:translateX(3px)} }
+@keyframes hero-bag-puff { 0%,100%{transform:scale(1)} 50%{transform:scale(1.04)} }
+@keyframes hero-rock-pulse { 0%,100%{opacity:0.9} 50%{opacity:1} }
+@keyframes hero-arrow-pulse { 0%,100%{opacity:.5} 50%{opacity:1} }
+@keyframes hero-twinkle-anim { 0%,100%{opacity:.4;transform:scale(.85)} 50%{opacity:1;transform:scale(1.15)} }
+.hero-water { animation: hero-water-slosh 2.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-bag { animation: hero-bag-puff 2.8s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-rock { animation: hero-rock-pulse 3s ease-in-out infinite; }
+.hero-arrow { animation: hero-arrow-pulse 2.2s ease-in-out infinite; }
+.hero-twinkle { animation: hero-twinkle-anim 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.quiz-video-conditional { display: none; margin-top: 16px; }
+.quiz-video-conditional.show { display: block; }
+@media (max-width: 620px) { .intro-2col { grid-template-columns: 1fr; } .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; } .vocab-grid { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<a id="pageTop"></a>
+<div class="page-wrap">
+
+<div class="progress-wrap">
+  <span class="progress-label">💨 Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Investigation: Comparing States of Matter</div>
+  <div class="header-badge">
+    <span>💨</span>
+    <span>Lesson 4.02</span>
+  </div>
+</div>
+
+<!-- HERO — Lab bench with rock + cup of water + air-filled bag, magnifier + ruler -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1428"/>
+      <stop offset="60%" stop-color="#102347"/>
+      <stop offset="100%" stop-color="#1a3155"/>
+    </linearGradient>
+    <radialGradient id="rockG" cx="0.35" cy="0.3" r="0.7">
+      <stop offset="0%" stop-color="#888"/>
+      <stop offset="100%" stop-color="#3a3a3a"/>
+    </radialGradient>
+    <linearGradient id="waterG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(85,200,232,0.4)"/>
+      <stop offset="100%" stop-color="rgba(85,200,232,0.7)"/>
+    </linearGradient>
+    <linearGradient id="bagG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.1)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.05)"/>
+    </linearGradient>
+  </defs>
+  <rect width="920" height="260" fill="url(#bgG)"/>
+
+  <!-- Twinkles -->
+  <circle class="hero-twinkle" cx="80" cy="35" r="1.6" fill="#FFD700"/>
+  <circle class="hero-twinkle" cx="840" cy="40" r="1.5" fill="#9CE3F5"/>
+
+  <!-- Bench line -->
+  <rect x="0" y="220" width="920" height="6" fill="#34B76F" opacity="0.4"/>
+  <line x1="0" y1="226" x2="920" y2="226" stroke="#55C8E8" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- SOLID: Rock on left -->
+  <g transform="translate(110,130)">
+    <ellipse class="hero-rock" cx="50" cy="85" rx="55" ry="10" fill="#000" opacity="0.4"/>
+    <path class="hero-rock" d="M 10 80 Q 0 50 25 30 Q 60 15 85 30 Q 105 50 95 80 Z" fill="url(#rockG)" stroke="#222" stroke-width="2"/>
+    <path d="M 25 50 L 40 45 L 55 55" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+    <rect x="-5" y="100" width="110" height="22" rx="5" fill="#34B76F"/>
+    <text x="50" y="116" text-anchor="middle" font-family="Nunito,sans-serif" font-size="12" fill="#fff" font-weight="800">SOLID — a rock</text>
+  </g>
+
+  <!-- LIQUID: Cup of water in middle -->
+  <g transform="translate(370,100)">
+    <!-- Glass -->
+    <path d="M 10 5 L 18 110 L 130 110 L 138 5 Z" fill="rgba(255,255,255,0.05)" stroke="#55C8E8" stroke-width="2.5"/>
+    <!-- Water with slosh animation -->
+    <g class="hero-water">
+      <path d="M 22 40 L 25 105 L 123 105 L 126 40 Z" fill="url(#waterG)"/>
+      <ellipse cx="74" cy="40" rx="52" ry="4" fill="#9CE3F5" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+    </g>
+    <rect x="6" y="125" width="140" height="22" rx="5" fill="#55C8E8"/>
+    <text x="76" y="141" text-anchor="middle" font-family="Nunito,sans-serif" font-size="12" fill="#fff" font-weight="800">LIQUID — water</text>
+  </g>
+
+  <!-- GAS: Sealed bag with air on right -->
+  <g transform="translate(660,120)">
+    <g class="hero-bag">
+      <!-- Bag body -->
+      <path d="M 0 30 Q -3 95 5 100 L 165 100 Q 173 95 170 30 Q 165 25 145 25 L 25 25 Q 5 25 0 30 Z" fill="url(#bagG)" stroke="#9CE3F5" stroke-width="2"/>
+      <!-- Zip seal -->
+      <line x1="5" y1="30" x2="165" y2="30" stroke="#9CE3F5" stroke-width="2.5"/>
+      <line x1="10" y1="26" x2="160" y2="26" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <!-- "AIR" puffs inside -->
+      <circle cx="40" cy="65" r="6" fill="rgba(255,255,255,0.25)"/>
+      <circle cx="75" cy="55" r="8" fill="rgba(255,255,255,0.2)"/>
+      <circle cx="115" cy="70" r="7" fill="rgba(255,255,255,0.25)"/>
+      <circle cx="140" cy="55" r="5" fill="rgba(255,255,255,0.2)"/>
+      <circle cx="55" cy="85" r="5" fill="rgba(255,255,255,0.18)"/>
+      <circle cx="100" cy="85" r="6" fill="rgba(255,255,255,0.2)"/>
+    </g>
+    <rect x="20" y="105" width="135" height="22" rx="5" fill="#D4772C"/>
+    <text x="88" y="121" text-anchor="middle" font-family="Nunito,sans-serif" font-size="12" fill="#fff" font-weight="800">GAS — air in a bag</text>
+  </g>
+
+  <!-- Title bar at top -->
+  <rect x="280" y="15" width="360" height="28" rx="6" fill="rgba(85,200,232,0.15)" stroke="#55C8E8" stroke-width="1.5"/>
+  <text x="460" y="33" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" fill="#fff" font-weight="800">Three samples. Three sets of tests.</text>
+
+  <!-- Measurement icon — clipboard -->
+  <g transform="translate(50,55)">
+    <rect width="30" height="42" rx="3" fill="#FFD89C" stroke="#D4772C" stroke-width="1.5"/>
+    <line x1="6" y1="12" x2="24" y2="12" stroke="#5a3a1a" stroke-width="1"/>
+    <line x1="6" y1="20" x2="24" y2="20" stroke="#5a3a1a" stroke-width="1"/>
+    <line x1="6" y1="28" x2="22" y2="28" stroke="#5a3a1a" stroke-width="1"/>
+    <line x1="6" y1="36" x2="20" y2="36" stroke="#5a3a1a" stroke-width="1"/>
+  </g>
+</svg>
+</div>
+
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q1 · Unit 2</div>
+      <div class="info-detail">Matter and Its Properties</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 4</div>
+      <div class="info-detail">Lesson 4.02 — 5th Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF7EE;">💨</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Test the States</div>
+      <div class="info-detail">Hands-on property comparison</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">SC.5.P.8.1</div>
+      <div class="info-detail">Properties of Matter</div>
+    </div>
+  </div>
+</div>
+
+<div class="intro-2col">
+  <div class="card theme-earth">
+    <div class="card-head">
+      <div class="card-head-icon">🤔</div>
+      <div>
+        <div class="card-head-label">Big Question</div>
+        <div class="card-head-title">Think About This…</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>If you tested three samples — a rock, water, and air — which test would tell you the most about each one?</p>
+      <p style="font-size:14px;color:#9A8E82;">Keep this question in mind while you investigate.</p>
+    </div>
+  </div>
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Learning Goals</div>
+        <div class="card-head-title">I Can…</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#E8636B;color:#fff;font-weight:800;font-size:13px;margin-right:8px;">1</span>test three samples for shape, volume, and how they flow.</p>
+      <p><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#D4772C;color:#fff;font-weight:800;font-size:13px;margin-right:8px;">2</span>record my observations in a clear data table.</p>
+      <p style="margin-bottom:0;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#34B76F;color:#fff;font-weight:800;font-size:13px;margin-right:8px;">3</span>use my data to defend a claim about which sample is which state.</p>
+    </div>
+  </div>
+</div>
+
+<div class="need-strip">
+  <span class="need-strip-label">You'll need:</span>
+  <span class="need-chip">📓 Science notebook</span>
+  <span class="need-chip">✏️ Pencil</span>
+  <span class="need-chip">🪨 A small rock or coin (your "solid")</span>
+  <span class="need-chip">💧 About ½ cup of water</span>
+  <span class="need-chip">🛍️ A zip-top sandwich bag (your "gas")</span>
+  <span class="need-chip">🥣 Two different small containers (a cup, a bowl, a jar)</span>
+</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Investigate<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- TAB 1: VOCAB -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Lesson 4.02 — Time to Test Three States</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">💨</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 4-02-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#E8636B;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🔍 Notice, Wonder, and Predict</div>
+        <div class="act-subtitle">Pretend you've never seen any of these things before.</div>
+      </div>
+      <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>You're about to test three samples: a small rock, some water in a cup, and a bag full of air. You already know what each one is. But pretend you don't. Pretend you're a scientist from another planet.</p>
+      <p>If you had to figure out which sample was a solid, which was a liquid, and which was a gas — just by testing them — what would you do first?</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Which one test would you run first on all three samples? Why that one?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-sky">
+        <span class="callout-icon">🔭</span>
+        <p><strong>Write your prediction below.</strong> Use at least two sentences. Predict which property test will be the most useful for telling all three states apart, and explain why.</p>
+      </div>
+
+      <div class="response-q">
+        <textarea class="response-textarea" id="pred-1"
+          data-label="Prediction"
+          placeholder="I predict the most useful test will be ___ because..."
+          oninput="autoSave(this,'dot-pred-1')"></textarea>
+        <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+          Your prediction<span class="response-save-dot" id="dot-pred-1"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>You met five of these words yesterday. They're back today because you're going to use all of them. <strong>Tap each card to flip it.</strong></p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🧊</div><div class="fc-word">solid</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">solid</div><div class="fc-def">Matter that keeps its own shape and takes up a fixed amount of space.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💧</div><div class="fc-word">liquid</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">liquid</div><div class="fc-def">Matter that flows and takes the shape of its container, but keeps the same amount.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💨</div><div class="fc-word">gas</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">gas</div><div class="fc-def">Matter that spreads out to fill any container it's in. No fixed shape or volume.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏷️</div><div class="fc-word">property</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">property</div><div class="fc-def">A feature that describes matter — like shape, color, texture, or temperature.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📦</div><div class="fc-word">volume</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">volume</div><div class="fc-def">How much space something takes up. Liquids and solids keep theirs; gases don't.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🧾</div><div class="fc-word">evidence</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">evidence</div><div class="fc-def">Observations or data that help support your claim. The strongest evidence is specific.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- TAB 2: THE LESSON -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Setup &amp; Plan</div>
+        <div class="video-wrap-title">Three Tests That Tell You Everything</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Setup video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 4-02-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#D4772C;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 Three Tests You'll Run</div>
+        <div class="act-subtitle">Before you start, here's how each test works.</div>
+      </div>
+      <div class="act-time" style="background:#D4772C;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🔷</div>
+          <div>
+            <div class="card-head-label">Test 1</div>
+            <div class="card-head-title">Does It Keep Its Own Shape?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Hold up each sample and look at it. Move it to a different container. Did the shape change?</p>
+          <p>A <span class="vtip">solid<span class="vtip-box"><span class="vtip-word">solid</span>Matter that keeps its own shape.</span></span> always looks the same — a rock is rock-shaped in your hand and rock-shaped in the bowl. A <span class="vtip">liquid<span class="vtip-box"><span class="vtip-word">liquid</span>Matter that takes the shape of its container.</span></span> changes shape every time you pour it. A <span class="vtip">gas<span class="vtip-box"><span class="vtip-word">gas</span>Matter that fills any container it's in.</span></span> fills the whole bag — including the corners.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"If you squeeze the air bag, the air still fills every corner. Why?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">📐</div>
+          <div>
+            <div class="card-head-label">Test 2</div>
+            <div class="card-head-title">Does the Amount Stay the Same?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Take each sample and put it in two different containers. Watch the <span class="vtip">volume<span class="vtip-box"><span class="vtip-word">volume</span>How much space something takes up.</span></span> — the total amount of space it takes up.</p>
+          <p>A solid keeps the exact same volume — your rock is the same size no matter where it goes. A liquid keeps the same amount even when it changes shape — half a cup is half a cup. But a gas? A gas spreads to fill whatever container it's in. The bag holds it in, but if you opened the bag in a big room, the air would spread everywhere.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🧪</span>
+            <div>
+              <div class="label">Stop and Reason</div>
+              <div class="question">"If you poured ½ cup of water into a bigger cup, would it still be ½ cup of water? How do you know?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌊</div>
+          <div>
+            <div class="card-head-label">Test 3</div>
+            <div class="card-head-title">Does It Flow?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Try to pour each sample. The rock won't pour — it slides or thunks. The water flows easily from cup to cup. The air? You can't see it flow, but you can feel it — squeeze the bag and you'll feel the gas pushing the bag wherever there's room.</p>
+          <p><strong>Real-World Connection:</strong> The same three tests work for any matter, anywhere. Even matter scientists have never seen before. That's what makes properties so powerful — they're how we sort everything.</p>
+        </div>
+      </div>
+
+      <div class="key-concept">
+        <div class="kc-label">🔑 Key Concept</div>
+        <p>Three tests — shape, volume, flow — work together to tell solids, liquids, and gases apart. The pattern of YES/NO answers is what gives away the state of matter every time.</p>
+      </div>
+
+      <!-- Interactive diagram -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap each cell to see what to look for
+        </div>
+        <p style="font-size:15px;color:#5A4D3E;margin-bottom:10px;line-height:1.65;">This is your testing roadmap. Three samples down the side. Three tests across the top. Tap any cell to see what to look for.</p>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;max-width:100%;height:auto;" role="img" aria-label="Testing roadmap for three states of matter">
+            <rect width="720" height="360" fill="#FAF7F3" rx="12" stroke="#c8b896" stroke-width="2"/>
+
+            <!-- Column headers -->
+            <rect x="170" y="20" width="170" height="35" rx="6" fill="#0E1C42"/>
+            <text x="255" y="42" text-anchor="middle" font-size="13" fill="#fff" font-weight="800">TEST 1: SHAPE</text>
+            <rect x="350" y="20" width="170" height="35" rx="6" fill="#0E1C42"/>
+            <text x="435" y="42" text-anchor="middle" font-size="13" fill="#fff" font-weight="800">TEST 2: VOLUME</text>
+            <rect x="530" y="20" width="170" height="35" rx="6" fill="#0E1C42"/>
+            <text x="615" y="42" text-anchor="middle" font-size="13" fill="#fff" font-weight="800">TEST 3: FLOW</text>
+
+            <!-- Row labels -->
+            <rect x="20" y="70" width="140" height="85" rx="6" fill="#34B76F"/>
+            <text x="90" y="105" text-anchor="middle" font-size="14" fill="#fff" font-weight="800">🪨 Rock</text>
+            <text x="90" y="125" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">(solid)</text>
+
+            <rect x="20" y="165" width="140" height="85" rx="6" fill="#55C8E8"/>
+            <text x="90" y="200" text-anchor="middle" font-size="14" fill="#fff" font-weight="800">💧 Water</text>
+            <text x="90" y="220" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">(liquid)</text>
+
+            <rect x="20" y="260" width="140" height="85" rx="6" fill="#D4772C"/>
+            <text x="90" y="295" text-anchor="middle" font-size="14" fill="#fff" font-weight="800">🛍️ Air bag</text>
+            <text x="90" y="315" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">(gas)</text>
+
+            <!-- Cells -->
+            <!-- Rock row -->
+            <rect x="170" y="70" width="170" height="85" rx="6" fill="#EEF8F0" stroke="#34B76F" stroke-width="1.5"/>
+            <text x="255" y="115" text-anchor="middle" font-size="15" fill="#1a6b35" font-weight="800">YES ✓</text>
+            <text x="255" y="135" text-anchor="middle" font-size="11" fill="#5A4D3E">keeps own shape</text>
+
+            <rect x="350" y="70" width="170" height="85" rx="6" fill="#EEF8F0" stroke="#34B76F" stroke-width="1.5"/>
+            <text x="435" y="115" text-anchor="middle" font-size="15" fill="#1a6b35" font-weight="800">YES ✓</text>
+            <text x="435" y="135" text-anchor="middle" font-size="11" fill="#5A4D3E">same volume</text>
+
+            <rect x="530" y="70" width="170" height="85" rx="6" fill="#FFF0EC" stroke="#E8636B" stroke-width="1.5"/>
+            <text x="615" y="115" text-anchor="middle" font-size="15" fill="#a33" font-weight="800">NO ✗</text>
+            <text x="615" y="135" text-anchor="middle" font-size="11" fill="#5A4D3E">stays put</text>
+
+            <!-- Water row -->
+            <rect x="170" y="165" width="170" height="85" rx="6" fill="#FFF0EC" stroke="#E8636B" stroke-width="1.5"/>
+            <text x="255" y="210" text-anchor="middle" font-size="15" fill="#a33" font-weight="800">NO ✗</text>
+            <text x="255" y="230" text-anchor="middle" font-size="11" fill="#5A4D3E">takes container's</text>
+
+            <rect x="350" y="165" width="170" height="85" rx="6" fill="#EEF8F0" stroke="#34B76F" stroke-width="1.5"/>
+            <text x="435" y="210" text-anchor="middle" font-size="15" fill="#1a6b35" font-weight="800">YES ✓</text>
+            <text x="435" y="230" text-anchor="middle" font-size="11" fill="#5A4D3E">same amount</text>
+
+            <rect x="530" y="165" width="170" height="85" rx="6" fill="#EEF8F0" stroke="#34B76F" stroke-width="1.5"/>
+            <text x="615" y="210" text-anchor="middle" font-size="15" fill="#1a6b35" font-weight="800">YES ✓</text>
+            <text x="615" y="230" text-anchor="middle" font-size="11" fill="#5A4D3E">pours easily</text>
+
+            <!-- Gas row -->
+            <rect x="170" y="260" width="170" height="85" rx="6" fill="#FFF0EC" stroke="#E8636B" stroke-width="1.5"/>
+            <text x="255" y="305" text-anchor="middle" font-size="15" fill="#a33" font-weight="800">NO ✗</text>
+            <text x="255" y="325" text-anchor="middle" font-size="11" fill="#5A4D3E">fills container</text>
+
+            <rect x="350" y="260" width="170" height="85" rx="6" fill="#FFF0EC" stroke="#E8636B" stroke-width="1.5"/>
+            <text x="435" y="305" text-anchor="middle" font-size="15" fill="#a33" font-weight="800">NO ✗</text>
+            <text x="435" y="325" text-anchor="middle" font-size="11" fill="#5A4D3E">spreads out</text>
+
+            <rect x="530" y="260" width="170" height="85" rx="6" fill="#EEF8F0" stroke="#34B76F" stroke-width="1.5"/>
+            <text x="615" y="305" text-anchor="middle" font-size="15" fill="#1a6b35" font-weight="800">YES ✓</text>
+            <text x="615" y="325" text-anchor="middle" font-size="11" fill="#5A4D3E">flows fast</text>
+
+            <!-- Hotspots -->
+            <rect class="hotspot" data-part="rock-shape" data-info="Rock + Shape | Pick up your rock. Look at its shape. Now put it in a bowl. Look again. Same shape, right? That's what makes a solid a solid — it doesn't care what container it's in." x="170" y="70" width="170" height="85" rx="6" fill="#34B76F"/>
+            <rect class="hotspot" data-part="rock-volume" data-info="Rock + Volume | The rock takes up the same amount of space no matter where it sits. You can measure it once and it'll always be that size — unless you break it." x="350" y="70" width="170" height="85" rx="6" fill="#34B76F"/>
+            <rect class="hotspot" data-part="rock-flow" data-info="Rock + Flow | Try to pour the rock. It either slides or thunks — but it doesn't FLOW. A solid won't fill in around your fingers like water would." x="530" y="70" width="170" height="85" rx="6" fill="#34B76F"/>
+            <rect class="hotspot" data-part="water-shape" data-info="Water + Shape | Pour your water from one cup into another. The shape changes every time. In a tall glass, it's tall and narrow. In a bowl, it's wide and shallow. The water always takes whatever shape its container has." x="170" y="165" width="170" height="85" rx="6" fill="#55C8E8"/>
+            <rect class="hotspot" data-part="water-volume" data-info="Water + Volume | Even though the shape changes, the amount of water stays the same. Half a cup is half a cup whether it's in a tall glass or a wide bowl." x="350" y="165" width="170" height="85" rx="6" fill="#55C8E8"/>
+            <rect class="hotspot" data-part="water-flow" data-info="Water + Flow | Water pours. Easily. That's what makes it a liquid. The particles slide past each other, so the water moves smoothly from cup to cup." x="530" y="165" width="170" height="85" rx="6" fill="#55C8E8"/>
+            <rect class="hotspot" data-part="air-shape" data-info="Air + Shape | The air in your bag takes the shape of the bag. Squish the bag and the air pushes into wherever it has room. It doesn't have its own shape — it fills the whole bag." x="170" y="260" width="170" height="85" rx="6" fill="#D4772C"/>
+            <rect class="hotspot" data-part="air-volume" data-info="Air + Volume | If you opened the bag, the air would spread everywhere — into the room, across the table. Gas doesn't have a fixed amount of space; it just fills whatever space is available." x="350" y="260" width="170" height="85" rx="6" fill="#D4772C"/>
+            <rect class="hotspot" data-part="air-flow" data-info="Air + Flow | Squeeze the closed bag. You'll feel the air push the bag wherever there's room. Even though you can't see it, the gas is flowing — fast, in every direction." x="530" y="260" width="170" height="85" rx="6" fill="#D4772C"/>
+          </svg>
+          <div style="background:linear-gradient(135deg,#EAF8FD,#D6F2FB);border:2px solid #B8E2F0;border-radius:14px;padding:12px 18px;margin-top:10px;display:flex;align-items:center;gap:12px;">
+            <span style="font-size:28px;flex-shrink:0;animation:mind-blow-bounce 2s ease-in-out infinite;">👆</span>
+            <p style="font-size:15px;color:#0E1C42;line-height:1.55;margin:0;font-weight:600;">Tap any cell to read the test instructions for that sample.</p>
+          </div>
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-caption">Each sample gets three tests. The pattern of yes/no answers tells you what state you have.</div>
+      </div>
+
+      <div class="mind-blow">
+        <div class="mind-blow-icon">🤯</div>
+        <div class="mind-blow-content">
+          <div class="mind-blow-label">Mind-Blowing Fact</div>
+          <div class="mind-blow-text">The air inside your sealed bag has mass. A bag with about <strong>1 liter</strong> of air weighs roughly 1.2 grams more than the same bag with no air at all. You're holding matter you can't see.</div>
+        </div>
+      </div>
+
+      <details class="go-deeper">
+        <summary>Go Deeper — What if a test gives you mixed results?</summary>
+        <div class="gd-body">
+          <p>Sometimes a sample fails one test but passes the others. Sand, for example, can pour like a liquid, but each grain keeps its own shape. So a scientist would say sand is a "solid" — but it acts strange because the pieces are very small.</p>
+          <p>That's why running all three tests matters more than running just one. The full pattern of YES/NO answers is way more reliable than any single test.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Investigate →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- TAB 3: INVESTIGATE — MAIN EVENT -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Run the Three Tests</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Investigation video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 4-02-investigation-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#55C8E8;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Test All Three Samples</div>
+        <div class="act-subtitle">Three samples × three tests = nine little experiments.</div>
+      </div>
+      <div class="act-time" style="background:#55C8E8;">⏱ 25 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Gather your three samples on a clear table. Make sure your sandwich bag is full of air and zipped shut. Have two different containers (cups, bowls, or jars) ready for the pouring tests.</p>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">⚠️</span>
+        <p><strong>Before you start:</strong> Your "solid" can be anything small and not fragile — a coin, an eraser, a pebble. Use plain cool water from the tap. Work over the sink or a tray so spills aren't a problem.</p>
+      </div>
+
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Reference · The three samples set up</div>
+        <img
+          src="images/4-02-three-samples.jpg"
+          alt="A top-down photo of a small gray rock, a glass measuring cup with about half a cup of water, and a clear zip-top sandwich bag full of air, all on a wooden kitchen counter."
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';"
+        />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            Photorealistic top-down photo of three lab samples arranged on a clean wooden kitchen counter: a small gray pebble or rock about thumb-sized on the left, a clear glass measuring cup with about half a cup of plain water in the middle, and a sealed clear zip-top sandwich bag visibly puffed up with trapped air on the right. Soft natural daylight. Sharp focus. No hands, no text overlay, no white background.
+          </div>
+          <div class="image-suggestion-file">Save as: images/4-02-three-samples.jpg</div>
+        </div>
+        <div class="lesson-figure-caption">
+          One solid, one liquid, one gas. Same setup. Different behavior under each test.
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div style="display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,#55C8E8,#34B76F);border-radius:50%;color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+          <p style="font-size:16px;color:#0E1C42;font-weight:700;margin-bottom:4px;">Test 1: Shape</p>
+          <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">Move each sample into your two different containers. After each move, write down whether the sample keeps its own shape, or whether it changes shape to match the container. Watch the air bag — even sealed, the air shifts around.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div style="display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,#55C8E8,#34B76F);border-radius:50%;color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+          <p style="font-size:16px;color:#0E1C42;font-weight:700;margin-bottom:4px;">Test 2: Volume</p>
+          <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">Decide whether the amount of each sample changes when you move it. Did the rock get bigger or smaller? Did you somehow get more water? Did the air bag puff out the same in both containers?</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div style="display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,#55C8E8,#34B76F);border-radius:50%;color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+          <p style="font-size:16px;color:#0E1C42;font-weight:700;margin-bottom:4px;">Test 3: Flow</p>
+          <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">Try pouring each sample (gently!) between your containers. For the air, keep the bag sealed and gently squeeze it — you'll feel the gas push back. Record what each sample does.</p>
+        </div>
+      </div>
+
+      <!-- Data Table -->
+      <div class="student-chart-wrap">
+        <div class="student-chart-label">📋 Your test results — copy into your notebook</div>
+        <table class="student-chart">
+          <thead>
+            <tr>
+              <th style="width:25%;">Sample</th>
+              <th>Keeps shape?</th>
+              <th>Same amount?</th>
+              <th>Does it flow?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="row-label">🪨 Rock</td><td></td><td></td><td></td></tr>
+            <tr><td class="row-label">💧 Water</td><td></td><td></td><td></td></tr>
+            <tr><td class="row-label">🛍️ Air bag</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Step 4 -->
+      <div style="display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,#55C8E8,#34B76F);border-radius:50%;color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
+        <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+          <p style="font-size:16px;color:#0E1C42;font-weight:700;margin-bottom:4px;">Spot the pattern</p>
+          <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">Look at the rows in your table. Does each sample have its own unique pattern of YES/NO answers? Underline the test that gives the clearest difference between all three.</p>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div style="display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,#55C8E8,#34B76F);border-radius:50%;color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div>
+        <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+          <p style="font-size:16px;color:#0E1C42;font-weight:700;margin-bottom:4px;">Make a claim</p>
+          <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">Write one sentence: "The three states of matter are different because ___." Use specific results from your table. This will become part of your CER.</p>
+        </div>
+      </div>
+
+      <div class="card theme-magma scroll-reveal" style="margin-top:10px;">
+        <div class="card-head">
+          <div class="card-head-icon">📝</div>
+          <div>
+            <div class="card-head-label">Record Your Thinking</div>
+            <div class="card-head-title">What Did You Find?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p style="font-size:15px;color:#5A4D3E;margin-bottom:10px;">Answer in complete sentences using your test data.</p>
+
+          <div class="pq">
+            <span class="pq-num" style="background:#D4772C;">1</span>
+            <span class="pq-text">Which sample passed Test 1 (kept its shape) but failed Test 3 (couldn't flow)? What state is it?</span>
+          </div>
+          <div class="response-q">
+            <textarea class="response-textarea ta-sm" id="ryt-1"
+              data-label="Investigate — Q1: Solid pattern"
+              placeholder="The sample that kept its shape but couldn't flow was..."
+              oninput="autoSave(this,'dot-ryt-1')"></textarea>
+            <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+              Your answer<span class="response-save-dot" id="dot-ryt-1"></span>
+            </span>
+          </div>
+
+          <div class="pq" style="margin-top:14px;">
+            <span class="pq-num" style="background:#D4772C;">2</span>
+            <span class="pq-text">Which sample failed BOTH the shape test and the volume test? What makes that state unique?</span>
+          </div>
+          <div class="response-q">
+            <textarea class="response-textarea ta-sm" id="ryt-2"
+              data-label="Investigate — Q2: Gas pattern"
+              placeholder="The sample that failed both tests was..."
+              oninput="autoSave(this,'dot-ryt-2')"></textarea>
+            <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+              Your answer<span class="response-save-dot" id="dot-ryt-2"></span>
+            </span>
+          </div>
+
+          <div class="pq" style="margin-top:14px;">
+            <span class="pq-num" style="background:#D4772C;">3</span>
+            <span class="pq-text">Which single test would tell you the MOST about a mystery sample? Why?</span>
+          </div>
+          <div class="response-q">
+            <textarea class="response-textarea ta-sm" id="ryt-3"
+              data-label="Investigate — Q3: Most useful test"
+              placeholder="The most useful test would be ___ because..."
+              oninput="autoSave(this,'dot-ryt-3')"></textarea>
+            <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+              Your answer<span class="response-save-dot" id="dot-ryt-3"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card theme-rock scroll-reveal" style="margin-top:10px;">
+        <div class="card-head">
+          <div class="card-head-icon">💬</div>
+          <div>
+            <div class="card-head-label">Discuss and Defend</div>
+            <div class="card-head-title">Use Your Evidence</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p style="font-size:15px;color:#5A4D3E;margin-bottom:10px;">Think about these. Be ready to explain your reasoning.</p>
+
+          <div class="socratic-q">
+            <span class="sq-icon">⚔️</span>
+            <div>
+              <div class="label">Defend Your Thinking</div>
+              <div class="question">"A friend says the air bag was 'empty' — there was nothing to test. What evidence from your investigation proves there was actually matter inside?"</div>
+            </div>
+          </div>
+
+          <div class="socratic-q">
+            <span class="sq-icon">🔍</span>
+            <div>
+              <div class="label">Compare the Evidence</div>
+              <div class="question">"If you tested honey, would your three tests all give the same answers as water? Why might honey be tricky to classify?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- TAB 4: QUIZ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card">
+    <div style="display:flex;align-items:center;gap:12px;padding:16px 22px;background:linear-gradient(135deg,#FFF7DC,#FFF3C4);border-bottom:2px solid #F5E6A8;">
+      <div style="width:48px;height:48px;background:#F5A623;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;">🧠</div>
+      <div>
+        <div style="font-size:11px;color:#B8860B;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;">Self-Check</div>
+        <div style="font-size:22px;color:#0E1C42;font-weight:800;line-height:1.2;">Quick Self-Check</div>
+        <div style="font-size:13px;color:#9A8E82;font-weight:600;">Not graded — just for you! See how much you understand.</div>
+      </div>
+    </div>
+
+    <div style="padding:22px 24px;">
+
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">You test a mystery sample. It keeps its shape AND keeps its volume. What state is it?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Gas</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Liquid</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Solid</div>
+        </div>
+        <div class="quiz-feedback fb-correct">✅ Correct! A solid is the only state that passes BOTH the shape test and the volume test. It doesn't change either one.</div>
+        <div class="quiz-feedback fb-wrong">❌ Not quite. Look back at the roadmap. Which state gets a YES on shape AND a YES on volume?</div>
+      </div>
+
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">A sample takes the shape of every container you put it in, but always keeps the same amount. What is it?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A liquid — it changes shape but keeps its amount.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A solid — it keeps the same shape and amount.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A gas — it always spreads out.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">✅ Correct! That's the signature of a liquid: shape changes but amount stays put. Half a cup is always half a cup.</div>
+        <div class="quiz-feedback fb-wrong">❌ Not quite. A solid wouldn't change shape. A gas wouldn't keep the same amount in different containers. Which state has both?</div>
+      </div>
+
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">You squeeze your sealed air bag. The bag changes shape, but the air pushes back. What does that prove?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The bag is empty — air isn't matter.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The air is real matter that takes up space, even if you can't see it.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The bag is the matter — the air doesn't matter.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">✅ Correct! If the air weren't matter, the bag would just collapse. The push-back is your evidence — gas takes up real space.</div>
+        <div class="quiz-feedback fb-wrong">❌ Not quite. Empty bags collapse. The air pushing back proves it's there — and that means it's matter.</div>
+      </div>
+
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num"><span id="quizScoreNum">0</span>/3</div>
+        <div class="quiz-score-label">Questions Correct</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+      </div>
+
+      <div class="quiz-video-conditional" id="quizVideoPerfect">
+        <div class="video-wrap">
+          <div class="video-wrap-header">
+            <span style="font-size:20px;">🎉</span>
+            <div>
+              <div class="video-wrap-type">Perfect Score · Bonus Content</div>
+              <div class="video-wrap-title">Now try this with three new samples.</div>
+            </div>
+          </div>
+          <div class="video-ratio">
+            <div class="video-placeholder">
+              <div class="video-placeholder-icon">🌟</div>
+              <div class="video-placeholder-text">Bonus video coming soon</div>
+              <div class="video-placeholder-id"><!-- slot: 4-02-quiz-perfect --></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-video-conditional" id="quizVideoReview">
+        <div class="video-wrap">
+          <div class="video-wrap-header">
+            <span style="font-size:20px;">🔄</span>
+            <div>
+              <div class="video-wrap-type">Review · Keep Going</div>
+              <div class="video-wrap-title">Let's review the three tests.</div>
+            </div>
+          </div>
+          <div class="video-ratio">
+            <div class="video-placeholder">
+              <div class="video-placeholder-icon">📖</div>
+              <div class="video-placeholder-text">Review video coming soon</div>
+              <div class="video-placeholder-id"><!-- slot: 4-02-quiz-review --></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- TAB 5: ASSIGNMENT -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Assignment · What To Do</div>
+        <div class="video-wrap-title">Here's What to Do — Compare the States</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 4-02-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">📐 Part A — Data Table</p>
+  <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Take a clear photo of your completed test table from your notebook.</p>
+
+  <div class="pq">
+    <span class="pq-num" style="background:#E8636B;">1</span>
+    <span class="pq-text"><strong>Data summary:</strong> In the box below, type the results from each row. (Example: "Rock — shape: yes, volume: yes, flow: no.")</span>
+  </div>
+  <div class="response-q">
+    <textarea class="response-textarea ta-sm" id="parta-1"
+      data-label="Part A — Data summary"
+      placeholder="Rock — shape: ___, volume: ___, flow: ___ | Water — ___ | Air bag — ___"
+      oninput="autoSave(this,'dot-parta-1')"></textarea>
+    <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+      Your answer<span class="response-save-dot" id="dot-parta-1"></span>
+    </span>
+  </div>
+
+  <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">📊 Part B — Evidence Questions</p>
+  <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in complete sentences using your actual results.</p>
+
+  <div class="pq">
+    <span class="pq-num" style="background:#D4772C;">2</span>
+    <span class="pq-text">What was the same about the rock and the water when you tested volume? What was different about them?</span>
+  </div>
+  <div class="response-q">
+    <textarea class="response-textarea ta-sm" id="partb-1"
+      data-label="Part B — Q1: Rock vs water volume"
+      placeholder="Same: ___. Different: ___."
+      oninput="autoSave(this,'dot-partb-1')"></textarea>
+    <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+      Your answer<span class="response-save-dot" id="dot-partb-1"></span>
+    </span>
+  </div>
+
+  <div class="pq">
+    <span class="pq-num" style="background:#D4772C;">3</span>
+    <span class="pq-text">The air bag looked empty but felt firm when you squeezed it. What two pieces of evidence from your test prove there's matter inside?</span>
+  </div>
+  <div class="response-q">
+    <textarea class="response-textarea ta-sm" id="partb-2"
+      data-label="Part B — Q2: Evidence of air"
+      placeholder="Evidence 1: ___. Evidence 2: ___."
+      oninput="autoSave(this,'dot-partb-2')"></textarea>
+    <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+      Your answer<span class="response-save-dot" id="dot-partb-2"></span>
+    </span>
+  </div>
+
+  <div class="pq">
+    <span class="pq-num" style="background:#D4772C;">4</span>
+    <span class="pq-text">Now imagine a fourth mystery sample. It keeps its volume but takes the shape of any container. What state would you predict, and what would you test next to be sure?</span>
+  </div>
+  <div class="response-q">
+    <textarea class="response-textarea ta-sm" id="partb-3"
+      data-label="Part B — Q3: Mystery sample"
+      placeholder="I predict the sample is a ___. To be sure, I would test..."
+      oninput="autoSave(this,'dot-partb-3')"></textarea>
+    <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+      Your answer<span class="response-save-dot" id="dot-partb-3"></span>
+    </span>
+  </div>
+
+  <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">✍️ Part C — Claim · Evidence · Reasoning</p>
+  <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Aim for 4–6 sentences total.</p>
+
+  <div class="cer-block">
+    <div class="cer-header">
+      <span class="cer-icon">💨</span>
+      <div class="cer-header-text">
+        <div class="cer-label">Claim · Evidence · Reasoning</div>
+        <div class="cer-question">Pick the test that gave you the clearest difference between solids, liquids, and gases. Defend your choice using your data.</div>
+      </div>
+    </div>
+
+    <div class="cer-section">
+      <div class="cer-badge cer-badge-claim">C</div>
+      <div class="cer-section-body">
+        <div class="cer-section-title">Claim <span class="cer-section-hint">— Which test was clearest?</span></div>
+        <div class="cer-write-box">
+          <p class="cer-starter">💡 Start with: <em>"The clearest test for telling the three states apart was the ___ test because…"</em></p>
+          <textarea class="response-textarea ta-sm" id="cer-claim"
+            data-label="Part C — Claim"
+            placeholder="The clearest test for telling the three states apart was the ___ test because..."
+            oninput="autoSave(this,'dot-cer-claim')"></textarea>
+          <span style="font-size:12px;color:#9A8E82;font-weight:600;display:block;margin-top:4px;">
+            Your claim<span class="response-save-dot" id="dot-cer-claim"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cer-section">
+      <div class="cer-badge cer-badge-evidence">E</div>
+      <div class="cer-section-body">
+        <div class="cer-section-title">Evidence <span class="cer-section-hint">— What did each sample do on that test?</span></div>
+        <div class="cer-write-box">
+          <p class="cer-starter">💡 Start with: <em>"In my data, the rock ___, the water ___, and the air bag ___."</em></p>
+          <textarea class="response-textarea ta-sm" id="cer-evidence"
+            data-label="Part C — Evidence"
+            placeholder="In my data, the rock ___, the water ___, and the air bag ___."
+            oninput="autoSave(this,'dot-cer-evidence')"></textarea>
+          <span style="font-size:12px;color:#9A8E82;font-weight:600;display:block;margin-top:4px;">
+            Your evidence<span class="response-save-dot" id="dot-cer-evidence"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cer-section">
+      <div class="cer-badge cer-badge-reason">R</div>
+      <div class="cer-section-body">
+        <div class="cer-section-title">Reasoning <span class="cer-section-hint">— Why does that test work so well?</span></div>
+        <div class="cer-write-box">
+          <p class="cer-starter">💡 Start with: <em>"This test was the clearest because…"</em></p>
+          <textarea class="response-textarea ta-sm" id="cer-reasoning"
+            data-label="Part C — Reasoning"
+            placeholder="This test was the clearest because..."
+            oninput="autoSave(this,'dot-cer-reasoning')"></textarea>
+          <span style="font-size:12px;color:#9A8E82;font-weight:600;display:block;margin-top:4px;">
+            Your reasoning<span class="response-save-dot" id="dot-cer-reasoning"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cer-vocab-check">
+      📚 <strong>Vocab check:</strong> Use at least two of these words: <strong>solid</strong>, <strong>liquid</strong>, <strong>gas</strong>, <strong>property</strong>, <strong>volume</strong>, <strong>evidence</strong>
+    </div>
+  </div>
+
+  <div class="revise-block">
+    <div class="revise-header">
+      <span class="revise-icon">🔄</span>
+      <div>
+        <div class="revise-label">Revise Your Thinking</div>
+        <div class="revise-question">Look back at your prediction about which test would be most useful.</div>
+      </div>
+    </div>
+    <div class="revise-prompts">
+      <p>Write 3–4 sentences answering these:</p>
+      <ul>
+        <li>What test did you predict would be most useful? Why?</li>
+        <li>After running all three, which test actually told you the most?</li>
+        <li>What surprised you about doing the tests yourself?</li>
+      </ul>
+    </div>
+    <div class="cer-write-box" style="margin-top:14px;">
+      <textarea class="response-textarea ta-lg" id="revise-1"
+        data-label="Revise Your Thinking"
+        placeholder="I predicted ___, but the test that actually told me the most was ___..."
+        oninput="autoSave(this,'dot-revise-1')"></textarea>
+      <span style="font-size:12px;color:#9A8E82;font-weight:600;display:block;margin-top:4px;">
+        Your reflection<span class="response-save-dot" id="dot-revise-1"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="gathered-card">
+    <div class="gathered-header">
+      <div class="gathered-header-icon">📋</div>
+      <div>
+        <div class="gathered-header-label">Lesson 4.02 · Submission Packet</div>
+        <div class="gathered-header-title">Gathered Answers</div>
+      </div>
+    </div>
+    <div class="gathered-body">
+      <div class="gathered-intro">All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.</div>
+      <div class="gathered-name-row">
+        <span class="gathered-name-label">Your name:</span>
+        <input type="text" class="gathered-name-input" id="student-name" placeholder="Type your name here" oninput="refreshGathered()" />
+      </div>
+      <textarea class="gathered-output" id="gatheredOutput" readonly></textarea>
+      <div class="gathered-actions">
+        <button class="gathered-btn" onclick="copyGathered()">📋 Copy to Clipboard</button>
+        <button class="gathered-btn gathered-btn-download" onclick="downloadGathered()">⬇ Download as Text</button>
+      </div>
+      <div class="gathered-copied" id="copiedMsg">Copied! Paste into your Canvas text box to turn in.</div>
+    </div>
+  </div>
+
+  <div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden;">
+    <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #B8E2F0;">
+      <div style="width:42px;height:42px;border-radius:50%;background:#55C8E8;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📬</div>
+      <div>
+        <div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;">Time to Submit</div>
+        <div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2;">What to Turn In</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+      <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">When you've finished, copy your gathered answers above into Canvas (plus a photo of your data table). Use this checklist before you submit.</p>
+
+      <div class="turn-in-checklist">
+
+        <div class="turn-in-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+          <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;"></span>
+          <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A — Data Table:</strong> All nine cells filled in for rock, water, and air bag.</span>
+        </div>
+
+        <div class="turn-in-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+          <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;"></span>
+          <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B — Evidence Questions:</strong> All three answered using your real test results.</span>
+        </div>
+
+        <div class="turn-in-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+          <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;"></span>
+          <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C — CER:</strong> Claim, evidence with all three samples, and reasoning.</span>
+        </div>
+
+        <div class="turn-in-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+          <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;"></span>
+          <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Revise Your Thinking:</strong> 3–4 sentences comparing your prediction to your actual results.</span>
+        </div>
+
+        <div class="turn-in-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+          <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;"></span>
+          <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Vocab Check:</strong> At least two lesson words used accurately.</span>
+        </div>
+
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;">
+        <div style="background:#EEF8F0;border:1.5px solid #C4E5CC;border-radius:12px;padding:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:4px;">⌨️</div>
+          <div style="font-size:14px;color:#0E1C42;font-weight:700;">Type It</div>
+          <div style="font-size:12px;color:#5A4D3E;">Type your answers directly into Canvas</div>
+        </div>
+        <div style="background:#EAF8FD;border:1.5px solid #D6F2FB;border-radius:12px;padding:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:4px;">📸</div>
+          <div style="font-size:14px;color:#0E1C42;font-weight:700;">Photo It</div>
+          <div style="font-size:12px;color:#5A4D3E;">Take a clear photo of your data table</div>
+        </div>
+        <div style="background:#FFF7EE;border:1.5px solid #F0DCC4;border-radius:12px;padding:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:4px;">🎥</div>
+          <div style="font-size:14px;color:#0E1C42;font-weight:700;">Record It</div>
+          <div style="font-size:12px;color:#5A4D3E;">Record yourself explaining one test</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="video-wrap" style="margin-top:20px;">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">👋</span>
+      <div>
+        <div class="video-wrap-type">Wrap-Up · Closing Video</div>
+        <div class="video-wrap-title">You measured matter you can't see. That's real science.</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🌟</div>
+        <div class="video-placeholder-text">Closing video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 4-02-closing --></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<footer class="footer">
+  <div class="footer-line1">Optima Academy Online &mdash; <span>5th Grade Science</span></div>
+  <div class="footer-line2">Module 4 · Lesson 4.02 — Investigation: Comparing States of Matter · SC.5.P.8.1, 5-PS1-3</div>
+  <div class="footer-line3">© Optima Academy Online. All rights reserved.</div>
+</footer>
+
+<button class="back-to-top" id="backToTop" type="button">💨 Back to Top</button>
+<canvas id="confettiCanvas"></canvas>
+
+</div><!-- /page-wrap -->
+
+<script>
+var LESSON_EMOJI = '💨';
+var TAB_COUNT = 5;
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+function switchTab(id) {
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelector('[data-tab="' + id + '"]').classList.add('active');
+  document.querySelector('[data-tab="' + id + '"]').classList.add('visited');
+  document.getElementById('tab-' + id).classList.add('active');
+  tabProgress[id] = true;
+  updateProgress();
+  var inIframe = (function(){ try { return window.self !== window.top; } catch(e){ return true; } })();
+  if (inIframe) { try { window.parent.scrollTo(0, 0); } catch(e){} try { document.getElementById('pageTop').scrollIntoView(); } catch(e){} }
+  else { window.scrollTo(0, 0); }
+}
+function updateProgress() {
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / TAB_COUNT) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+}
+(function(){
+  var panel = document.getElementById('diagramPanel'); if (!panel) return;
+  var wordEl = document.getElementById('diagramWord');
+  var infoEl = document.getElementById('diagramInfo');
+  var hotspots = document.querySelectorAll('.diagram-interactive .hotspot');
+  hotspots.forEach(function(hs){
+    hs.addEventListener('click', function(e){
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var raw = hs.getAttribute('data-info') || '';
+      var parts = raw.split('|');
+      wordEl.textContent = parts[0] ? parts[0].trim() : '';
+      infoEl.textContent = parts[1] ? parts[1].trim() : raw;
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e){
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+var quizAnswered = 0, quizCorrect = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q'); if (q.classList.contains('answered')) return;
+  q.classList.add('answered'); quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen = optEl.getAttribute('data-val');
+  var opts = q.querySelectorAll('.quiz-opt');
+  opts.forEach(function(o){ if (o.getAttribute('data-val') === correct) o.classList.add('correct'); else o.classList.add('disabled'); });
+  var fbCorrect = q.querySelector('.fb-correct'); var fbWrong = q.querySelector('.fb-wrong');
+  if (chosen === correct) { quizCorrect++; optEl.classList.add('correct'); if (fbCorrect) fbCorrect.classList.add('show'); }
+  else { optEl.classList.add('wrong'); if (fbWrong) fbWrong.classList.add('show'); }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) { scoreMsg.textContent = '🎉 Perfect score! You can run a real state-of-matter investigation.'; setTimeout(window.launchConfetti, 300); var vp = document.getElementById('quizVideoPerfect'); if (vp) vp.classList.add('show'); }
+    else if (quizCorrect === 2) { scoreMsg.textContent = '🌟 Great work! Review the one you missed.'; var vr = document.getElementById('quizVideoReview'); if (vr) vr.classList.add('show'); }
+    else { scoreMsg.textContent = '👍 Good effort! Look back at the three-test roadmap.'; var vr2 = document.getElementById('quizVideoReview'); if (vr2) vr2.classList.add('show'); }
+    scoreBox.classList.add('show');
+  }
+}
+document.querySelectorAll('.vtip').forEach(function(tip){
+  var box = tip.querySelector('.vtip-box'); if (!box) return;
+  tip.addEventListener('mouseenter', function(){
+    var rect = tip.getBoundingClientRect(); var bw = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (icon) icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
+  var checklist = item.closest('.turn-in-checklist'); if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item'); if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){ return it.classList.contains('checked'); });
+  if (allChecked) setTimeout(window.launchConfetti, 200);
+}
+(function(){
+  var btn = document.getElementById('backToTop'); if (!btn) return;
+  btn.textContent = LESSON_EMOJI + ' Back to Top';
+  var inIframe = (function(){ try { return window.self !== window.top; } catch(e){ return true; } })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(e) {}
+    document.documentElement.scrollTop = 0; document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) { try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch(e) {} }
+    try { if (window.frameElement && window.frameElement.scrollIntoView) window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch(e) {}
+    if (inIframe) { try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch(e) {} }
+  });
+  if (inIframe) setTimeout(function() { btn.classList.add('show'); }, 1500);
+  else window.addEventListener('scroll', function() { btn.classList.toggle('show', window.pageYOffset > 400); });
+})();
+(function(){
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#55C8E8','#34B76F','#F5A623','#FFD700','#8B6FC0','#E8636B','#1A6FA8','#D4772C'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x,y){ this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4; this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4; this.color=colors[Math.floor(Math.random()*colors.length)]; this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12; this.opacity=1; this.shape=Math.random()>.5?'rect':'circle'; }
+  function burst(x,y,count){ for(var i=0;i<count;i++) particles.push(new Particle(x,y)); if(!animating){animating=true;animate();} }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){particles.splice(i,1);return;}
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect')ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6);
+      else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}
+      ctx.restore();
+    });
+    if(particles.length>0)requestAnimationFrame(animate); else{animating=false;ctx.clearRect(0,0,canvas.width,canvas.height);}
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.4, 50);
+    burst(cx, window.innerHeight*.3, 60);
+    burst(cx+100, window.innerHeight*.4, 50);
+  };
+})();
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress.vocab = true; updateProgress();
+(function(){
+  var progressBar = document.querySelector('.progress-wrap');
+  var tabBar = document.querySelector('.tab-bar');
+  if (!progressBar || !tabBar) return;
+  function alignTabBar() { tabBar.style.top = progressBar.offsetHeight + 'px'; }
+  alignTabBar();
+  window.addEventListener('resize', alignTabBar);
+})();
+(function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    var container = q.querySelector('.quiz-options'); if (!container) return;
+    var opts = Array.prototype.slice.call(container.querySelectorAll('.quiz-opt'));
+    for (var i = opts.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      container.appendChild(opts[j]);
+      var tmp = opts[i]; opts[i] = opts[j]; opts[j] = tmp;
+    }
+  });
+})();
+(function(){
+  var cards = document.querySelectorAll('.intro-2col .card');
+  cards.forEach(function(card){
+    card.querySelector('.card-head').addEventListener('click', function(){
+      cards.forEach(function(c){ c.classList.toggle('collapsed'); });
+    });
+  });
+})();
+function autoSave(el, dotId) { var dot = document.getElementById(dotId); if (!dot) return; if (el.value.trim().length > 0) dot.classList.add('saved'); else dot.classList.remove('saved'); }
+function refreshGathered() {
+  var out = document.getElementById('gatheredOutput'); if (!out) return;
+  var lines = [];
+  var nameEl = document.getElementById('student-name'); var name = nameEl ? nameEl.value.trim() : '';
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('  OPTIMA ACADEMY ONLINE — 5TH GRADE SCIENCE');
+  lines.push('  Lesson 4.02 · Investigation: Comparing States of Matter');
+  lines.push('  Unit 2 — Matter and Its Properties');
+  lines.push('  Student: ' + (name || '(add your name above)'));
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('');
+  function grab(id, label) {
+    var el = document.getElementById(id); var val = el ? el.value.trim() : '';
+    lines.push('--- ' + label + ' ---');
+    lines.push(val || '(not yet answered)');
+    lines.push('');
+  }
+  grab('pred-1',        'PREDICTION');
+  grab('ryt-1',         'INVESTIGATE — Q1: SOLID PATTERN');
+  grab('ryt-2',         'INVESTIGATE — Q2: GAS PATTERN');
+  grab('ryt-3',         'INVESTIGATE — Q3: MOST USEFUL TEST');
+  grab('parta-1',       'PART A — DATA SUMMARY');
+  grab('partb-1',       'PART B — Q1: ROCK VS WATER VOLUME');
+  grab('partb-2',       'PART B — Q2: EVIDENCE OF AIR');
+  grab('partb-3',       'PART B — Q3: MYSTERY SAMPLE');
+  grab('cer-claim',     'PART C — CLAIM');
+  grab('cer-evidence',  'PART C — EVIDENCE');
+  grab('cer-reasoning', 'PART C — REASONING');
+  grab('revise-1',      'REVISE YOUR THINKING');
+  out.value = lines.join('\n');
+}
+function copyGathered() {
+  refreshGathered();
+  var out = document.getElementById('gatheredOutput'); out.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  var msg = document.getElementById('copiedMsg');
+  if (msg) { msg.classList.add('show'); setTimeout(function(){ msg.classList.remove('show'); }, 2400); }
+}
+function downloadGathered() {
+  refreshGathered();
+  var text = document.getElementById('gatheredOutput').value;
+  var blob = new Blob([text], {type: 'text/plain'});
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'lesson-4-02-investigation-comparing-states-of-matter.txt';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+document.addEventListener('input', function(e) {
+  if (e.target.classList.contains('response-textarea') || e.target.id === 'student-name') {
+    var panel = document.getElementById('tab-assignment');
+    if (panel && panel.classList.contains('active')) refreshGathered();
+  }
+});
+(function(){
+  var origSwitch = window.switchTab;
+  window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
+})();
+</script>
+</body>
+</html>

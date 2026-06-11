@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Model: Matter Made of Particles</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif; background: #F4F0EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); color: #2B1D12; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF7F3; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+.header { background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%); border-bottom: 6px solid #55C8E8; padding: 22px 28px 24px; position: relative; overflow: hidden; }
+.header::after { content: ''; position: absolute; bottom: 6px; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #55C8E8, #34B76F, #55C8E8); }
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo { width: 52px; height: 52px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title { font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px; text-shadow: 0 2px 12px rgba(85,200,232,0.3); }
+.header-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(85,200,232,0.15); border: 1.5px solid rgba(85,200,232,0.35); border-radius: 28px; padding: 6px 16px; }
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+.hero-visual { background: linear-gradient(180deg, #070a12 0%, #0e1829 60%, #1a2540 100%); padding: 0; position: relative; overflow: hidden; border-bottom: 3px solid #55C8E8; }
+.hero-visual svg { display: block; width: 100%; height: auto; }
+.info-strip { display: flex; flex-wrap: wrap; background: #fff; border-bottom: 2px solid #E8DDD2; }
+.info-item { flex: 1; min-width: 150px; padding: 12px 16px; border-right: 1px solid #E8DDD2; display: flex; align-items: center; gap: 10px; }
+.info-item:last-child { border-right: none; }
+.info-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+.card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 22px; overflow: hidden; box-shadow: 0 2px 12px rgba(43,29,18,0.04); }
+.card-head { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-bottom: 2px solid; }
+.card-head-icon { width: 42px; height: 42px; border-radius: 50%; color: #fff; font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+.theme-earth .card-head { background: #FFF7EE; border-color: #F0DCC4; }
+.theme-earth .card-head-icon { background: #C7922C; }
+.theme-sky .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky .card-head-icon { background: #55C8E8; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #34B76F; }
+.theme-rock .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock .card-head-icon { background: #8B6FC0; }
+.theme-magma .card-head { background: #FFF3DC; border-color: #F5E6C8; }
+.theme-magma .card-head-icon { background: #D4772C; }
+.activity-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(43,29,18,0.04); }
+.activity-card.act-warmup  { border-left: 6px solid #E8636B; }
+.activity-card.act-lesson  { border-left: 6px solid #D4772C; }
+.activity-card.act-explore { border-left: 6px solid #55C8E8; }
+.act-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px 14px 18px; border-bottom: 1.5px solid #E8DDD2; }
+.act-num { width: 38px; height: 38px; border-radius: 14px; color: #fff; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.act-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; margin-left: auto; flex-shrink: 0; }
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.callout { border-radius: 14px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-sky    { background: #EAF8FD; border: 2px solid #D6F2FB; }
+.callout-think  { background: #FFF7EE; border: 2px solid #F0DCC4; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.socratic-q { background: linear-gradient(135deg, #FFF7EE, #FFF3E0); border: 2px solid #E8C88A; border-radius: 16px; padding: 16px 20px; margin: 16px 0; display: flex; align-items: flex-start; gap: 12px; }
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label { font-size: 11px; color: #C7922C; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+.socratic-q .question { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; font-style: italic; }
+.key-concept { background: #EAF8FD; border: 2px solid #D6F2FB; border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
+.key-concept .kc-label { font-size: 13px; color: #2A8DB5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px; }
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+.pq { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; }
+.pq-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 14px; margin-right: 8px; vertical-align: middle; }
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+.vocab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+.flip-card { perspective: 800px; height: 160px; cursor: pointer; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s ease; transform-style: preserve-3d; }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 18px 20px; text-align: center; border: 2px solid #E8DDD2; box-shadow: 0 2px 10px rgba(43,29,18,0.06); }
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #0E1C42; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back { background: linear-gradient(145deg, #0E1C42, #1A2D5A); border-color: #0E1C42; transform: rotateY(180deg); }
+.flip-card-back .fc-def { font-size: 15px; color: #fff; line-height: 1.6; font-weight: 600; }
+.flip-card-back .fc-word-back { font-size: 11px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 8px; }
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #55C8E8; }
+.fc-color-2 .flip-card-front { border-top-color: #34B76F; }
+.fc-color-3 .flip-card-front { border-top-color: #C7922C; }
+.fc-color-4 .flip-card-front { border-top-color: #8B6FC0; }
+.fc-color-5 .flip-card-front { border-top-color: #E8636B; }
+.fc-color-6 .flip-card-front { border-top-color: #D4772C; }
+.vtip { position: relative; color: #8B6FC0; font-weight: 700; cursor: help; border-bottom: 2px dotted rgba(139,111,192,0.45); transition: color 0.15s; }
+.vtip:hover { color: #6B4FA0; }
+.vtip .vtip-box { position: fixed; background: #0E1C42; color: #fff; padding: 12px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; font-style: normal; line-height: 1.55; width: 250px; text-align: center; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; pointer-events: none; z-index: 9999; box-shadow: 0 6px 24px rgba(14,28,66,0.35); border: 1.5px solid rgba(85,200,232,0.3); transform: translateY(6px); }
+.vtip .vtip-box::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 7px solid transparent; border-top-color: #0E1C42; }
+.vtip .vtip-word { font-size: 11px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block; }
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+.go-deeper { background: linear-gradient(135deg, #F0EDF6, #E8E2F2); border: 2px solid #D8D0E8; border-radius: 16px; margin: 16px 0; overflow: hidden; }
+.go-deeper summary { padding: 14px 18px; font-size: 16px; font-weight: 800; color: #0E1C42; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; }
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after { content: '▸'; margin-left: auto; font-size: 18px; color: #8B6FC0; transition: transform 0.3s; }
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body { padding: 4px 18px 16px; font-size: 15px; color: #5A4D3E; line-height: 1.7; border-top: 1.5px solid #D8D0E8; }
+.go-deeper .gd-body p { margin-bottom: 10px; }
+.mind-blow { background: linear-gradient(135deg, #0a0e1a, #0E1C42); border: 2px solid rgba(85,200,232,0.3); border-radius: 18px; padding: 18px 22px; margin: 18px 0; display: flex; align-items: flex-start; gap: 14px; position: relative; overflow: hidden; }
+.mind-blow::before { content: ''; position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; border-radius: 50%; background: radial-gradient(circle, rgba(85,200,232,0.15), transparent); }
+.mind-blow-icon { font-size: 36px; flex-shrink: 0; animation: mind-blow-bounce 2s ease-in-out infinite; }
+@keyframes mind-blow-bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+.mind-blow-content { flex: 1; }
+.mind-blow-label { font-size: 11px; color: #FFD700; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px; }
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #55C8E8; }
+.diagram-interactive { position: relative; }
+.diagram-interactive .hotspot { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+.diagram-interactive .hotspot:hover { opacity: 0.25; }
+.diagram-interactive .hotspot.active { opacity: 0.35; }
+.diagram-info-panel { background: #0E1C42; color: #fff; padding: 14px 20px; border-radius: 14px; font-size: 15px; line-height: 1.55; font-weight: 600; text-align: center; border: 1.5px solid rgba(85,200,232,0.3); box-shadow: 0 4px 16px rgba(0,0,0,0.2); margin: 10px 0 0; display: none; }
+.diagram-info-panel.visible { display: block; }
+.diagram-info-panel .dip-word { font-size: 11px; color: #FFD700; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px; }
+.student-chart-wrap { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 16px 18px; margin: 16px 0; }
+.student-chart-label { font-size: 13px; color: #5A4D3E; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 12px; }
+.student-chart { width: 100%; border-collapse: collapse; font-size: 15px; }
+.student-chart th { background: #0E1C42; color: #fff; padding: 10px 12px; text-align: left; font-size: 13px; font-weight: 700; border: 1px solid #1A2D5A; }
+.student-chart td { padding: 10px 12px; border: 1.5px dashed #D0C8BE; color: #5A4D3E; font-size: 15px; vertical-align: middle; }
+.student-chart td.row-label { background: #F0EDE8; color: #0E1C42; font-weight: 700; border: 1px solid #E8DDD2; border-style: solid; }
+.student-chart tbody tr:nth-child(even) td:not(.row-label) { background: #F9F7F3; }
+.cer-block { background: #FAF7F3; border: 2px solid #8B6FC0; border-radius: 18px; padding: 22px 24px; margin-bottom: 22px; }
+.cer-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1.5px solid #E8DDD2; }
+.cer-icon { font-size: 28px; flex-shrink: 0; line-height: 1; }
+.cer-label { font-size: 11px; color: #8B6FC0; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+.cer-question { font-size: 18px; color: #0E1C42; font-weight: 700; line-height: 1.5; }
+.cer-section { display: flex; gap: 14px; margin-bottom: 18px; }
+.cer-badge { width: 32px; height: 32px; border-radius: 50%; color: #fff; font-size: 16px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.cer-badge-claim    { background: #E8636B; }
+.cer-badge-evidence { background: #D4772C; }
+.cer-badge-reason   { background: #34B76F; }
+.cer-section-body { flex: 1; }
+.cer-section-title { font-size: 16px; color: #0E1C42; font-weight: 800; margin-bottom: 8px; }
+.cer-section-hint { font-size: 13px; color: #9A8E82; font-weight: 600; }
+.cer-write-box { background: #fff; border: 2px dashed #E8DDD2; border-radius: 10px; padding: 14px; }
+.cer-starter { font-size: 14px; color: #C7922C; font-style: italic; margin: 0 0 10px; line-height: 1.5; }
+.cer-line { border-bottom: 1.5px solid #E8DDD2; height: 36px; margin-top: 2px; }
+.cer-vocab-check { background: #EAF8FD; border-radius: 10px; padding: 12px 14px; border-left: 3px solid #55C8E8; margin-top: 6px; font-size: 14px; color: #0E1C42; line-height: 1.5; }
+.revise-block { background: #FFF7EE; border: 2px solid #F0DCC4; border-radius: 16px; padding: 20px 22px; margin-bottom: 20px; }
+.revise-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.revise-icon { font-size: 28px; flex-shrink: 0; line-height: 1; }
+.revise-label { font-size: 11px; color: #C7922C; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+.revise-question { font-size: 17px; color: #0E1C42; font-weight: 700; line-height: 1.5; }
+.revise-prompts { font-size: 16px; color: #5A4D3E; line-height: 1.7; margin-bottom: 14px; }
+.revise-prompts ul { margin: 10px 0 0 20px; }
+.revise-prompts li { margin-bottom: 6px; }
+.response-q { margin: 10px 0 0; }
+.response-save-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #D0C8BE; margin-left: 6px; vertical-align: middle; transition: background 0.3s; flex-shrink: 0; }
+.response-save-dot.saved { background: #34B76F; }
+.response-textarea { width: 100%; min-height: 80px; padding: 10px 12px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #FAFAF6; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B1D12; resize: vertical; line-height: 1.65; transition: border-color 0.2s, box-shadow 0.2s; }
+.response-textarea:focus { outline: none; border-color: #55C8E8; box-shadow: 0 0 0 3px rgba(85,200,232,0.15); background: #fff; }
+.response-textarea.ta-sm { min-height: 64px; }
+.response-textarea.ta-lg { min-height: 110px; }
+.gathered-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin: 24px 0; overflow: hidden; box-shadow: 0 2px 12px rgba(43,29,18,0.06); }
+.gathered-header { background: linear-gradient(135deg, #0E1C42, #1A2D5A); padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+.gathered-header-icon { font-size: 24px; }
+.gathered-header-label { font-size: 10px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.gathered-header-title { font-size: 18px; color: #fff; font-weight: 800; line-height: 1.2; }
+.gathered-body { padding: 16px 20px 18px; }
+.gathered-intro { font-size: 14px; color: #5A4D3E; line-height: 1.6; margin-bottom: 12px; font-style: italic; }
+.gathered-name-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1.5px solid #E8DDD2; }
+.gathered-name-label { font-size: 13px; color: #0E1C42; font-weight: 800; white-space: nowrap; }
+.gathered-name-input { flex: 1; padding: 8px 12px; border: 1.5px solid #D0C8BE; border-radius: 8px; font-family: 'Nunito', sans-serif; font-size: 14px; color: #2B1D12; background: #FAFAF6; }
+.gathered-name-input:focus { outline: none; border-color: #55C8E8; background: #fff; }
+.gathered-output { width: 100%; min-height: 200px; padding: 12px 14px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #F4F0EB; font-family: 'Courier New', monospace; font-size: 13px; color: #2B1D12; resize: vertical; line-height: 1.6; white-space: pre-wrap; }
+.gathered-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.gathered-btn { background: #0E1C42; color: #fff; border: none; padding: 9px 18px; border-radius: 10px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+.gathered-btn:hover { background: #55C8E8; transform: translateY(-1px); }
+.gathered-btn-download { background: #34B76F; }
+.gathered-copied { display: none; margin-top: 8px; padding: 6px 12px; background: #EEF8F0; color: #1a6b35; border-radius: 8px; font-size: 13px; font-weight: 700; border: 1.5px solid #B8E8CF; }
+.gathered-copied.show { display: block; }
+.lesson-figure { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px; box-shadow: 0 2px 10px rgba(43,29,18,0.04); }
+.lesson-figure-label { font-size: 11px; color: #55C8E8; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; margin-bottom: 10px; }
+.lesson-figure img { display: block; max-width: 100%; height: auto; border-radius: 10px; margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.lesson-figure-caption { font-size: 14px; color: #5A4D3E; margin-top: 12px; line-height: 1.55; font-weight: 600; text-align: center; }
+.lesson-figure-caption strong { color: #0E1C42; }
+.image-suggestion { background: linear-gradient(135deg, #FFF3E0, #FFF8E1); border: 2.5px dashed #F9A825; border-radius: 16px; padding: 20px 22px; margin: 18px 0; text-align: center; }
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label { font-size: 11px; color: #E65100; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.image-suggestion-desc { font-size: 15px; color: #5A4D3E; line-height: 1.65; font-weight: 600; max-width: 680px; margin: 0 auto 12px; text-align: left; }
+.image-suggestion-file { font-size: 12px; color: #9A8E82; font-family: monospace; background: rgba(0,0,0,0.05); border-radius: 6px; padding: 4px 10px; display: inline-block; margin-top: 6px; }
+.video-wrap { border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2; box-shadow: 0 4px 20px rgba(43,29,18,0.08); background: #000; margin: 0 0 22px; }
+.video-wrap-header { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: linear-gradient(135deg, #0E1C42, #1A2D5A); border-bottom: 2px solid rgba(85,200,232,0.2); }
+.video-wrap-type { font-size: 10px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0e1829, #0E1C42); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+.video-placeholder-id { font-size: 11px; color: rgba(85,200,232,0.4); font-family: monospace; margin-top: 6px; }
+.progress-wrap { position: sticky; top: 0; z-index: 200; background: #0E1C42; padding: 8px 20px 10px; border-bottom: 2px solid rgba(85,200,232,0.3); display: flex; align-items: center; gap: 14px; }
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #55C8E8, #34B76F, #FFD700); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FFD700; font-weight: 800; min-width: 36px; text-align: right; }
+.tab-bar { position: sticky; top: 44px; z-index: 100; background: #FAF7F3; border-bottom: 3px solid #E8DDD2; display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn { flex: 1; min-width: 130px; padding: 12px 8px 11px; background: transparent; border: none; border-bottom: 4px solid transparent; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700; color: #9A8E82; cursor: pointer; transition: all 0.2s; white-space: nowrap; line-height: 1.3; text-align: center; }
+.tab-btn:hover { color: #0E1C42; background: #F0EDE8; }
+.tab-btn.active { color: #0E1C42; border-bottom-color: #55C8E8; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #34B76F; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+.tab-panel { display: none; padding: 24px 28px 36px; background: #ffffff; }
+.tab-panel.active { display: block; }
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after { content: '▾'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease; }
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip { display: inline-flex; align-items: center; gap: 5px; background: #EAF8FD; border: 1.5px solid #B8E2F0; border-radius: 20px; padding: 5px 12px; font-size: 13px; color: #0E1C42; font-weight: 700; }
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; background: linear-gradient(135deg, #55C8E8, #34B76F); color: #fff; border: none; border-radius: 28px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 16px rgba(85,200,232,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(85,200,232,0.45); }
+.turn-in-item { transition: background .2s, border-color .2s; }
+.turn-in-item:hover { background: #F0EDE8 !important; }
+.turn-in-item.checked { background: #EAF8FD !important; border-color: #B8E2F0 !important; }
+.turn-in-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+.turn-in-item.checked span:last-child { color: #5A4D3E; }
+.quiz-card { background: #fff; border: 2px solid #E8DDD2; border-left: 6px solid #F5A623; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(43,29,18,0.04); }
+.quiz-q { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 16px 18px; margin-bottom: 14px; }
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt { padding: 10px 16px; border-radius: 12px; border: 2px solid #E8DDD2; background: #fff; font-size: 15px; font-weight: 700; color: #2B1D12; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 10px; user-select: none; }
+.quiz-opt:hover { background: #EAF8FD; border-color: #55C8E8; }
+.quiz-opt.correct { background: #EEF8F0 !important; border-color: #34B76F !important; color: #1a6b35 !important; }
+.quiz-opt.wrong   { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+.quiz-opt .opt-letter { width: 28px; height: 28px; border-radius: 50%; background: #E8DDD2; color: #5A4D3E; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; }
+.quiz-opt.correct .opt-letter { background: #34B76F; color: #fff; }
+.quiz-opt.wrong .opt-letter   { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong   { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score { text-align: center; padding: 16px; background: linear-gradient(135deg, #EAF8FD, #D6F2FB); border: 2px solid #B8E8F5; border-radius: 14px; margin-top: 8px; display: none; }
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #0E1C42; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+.diagram-wrap { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 16px; margin: 16px 0; text-align: center; }
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption { font-size: 13px; color: #9A8E82; margin-top: 10px; font-weight: 600; }
+.back-to-top { position: fixed; bottom: 28px; right: 28px; height: 44px; padding: 0 18px 0 14px; border-radius: 22px; background: linear-gradient(135deg, #55C8E8, #34B76F); color: #fff; border: none; font-size: 14px; font-weight: 800; font-family: 'Nunito', sans-serif; cursor: pointer; box-shadow: 0 4px 18px rgba(85,200,232,0.35); display: flex; align-items: center; gap: 6px; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s; z-index: 500; letter-spacing: 0.3px; }
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 24px rgba(85,200,232,0.5); transform: translateY(-3px); }
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+.footer { background: #0E1C42; border-top: 4px solid #55C8E8; padding: 18px 28px; text-align: center; }
+.footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+.footer-line1 span { color: #55C8E8; font-weight: 700; }
+.footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+strong { color: #0E1C42; }
+em { color: #5A4D3E; }
+/* Hero animations — particles in 3 states */
+@keyframes hero-solid-vibrate { 0%,100%{transform:translate(0,0)} 25%{transform:translate(0.5px,-0.5px)} 50%{transform:translate(-0.5px,0.5px)} 75%{transform:translate(0.3px,0.3px)} }
+@keyframes hero-liquid-flow-1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(4px,2px)} }
+@keyframes hero-liquid-flow-2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-3px,3px)} }
+@keyframes hero-gas-drift-1 { 0%{transform:translate(0,0)} 50%{transform:translate(8px,-6px)} 100%{transform:translate(0,0)} }
+@keyframes hero-gas-drift-2 { 0%{transform:translate(0,0)} 50%{transform:translate(-7px,5px)} 100%{transform:translate(0,0)} }
+@keyframes hero-twinkle-anim { 0%,100%{opacity:.4;transform:scale(.85)} 50%{opacity:1;transform:scale(1.15)} }
+@keyframes hero-arrow-pulse { 0%,100%{opacity:.5} 50%{opacity:1} }
+.hero-solid { animation: hero-solid-vibrate 0.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-liquid-1 { animation: hero-liquid-flow-1 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-liquid-2 { animation: hero-liquid-flow-2 2.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-gas-1 { animation: hero-gas-drift-1 3.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-gas-2 { animation: hero-gas-drift-2 3.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle { animation: hero-twinkle-anim 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-arrow { animation: hero-arrow-pulse 2.4s ease-in-out infinite; }
+.quiz-video-conditional { display: none; margin-top: 16px; }
+.quiz-video-conditional.show { display: block; }
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
+  .vocab-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<a id="pageTop"></a>
+<div class="page-wrap">
+
+<div class="progress-wrap">
+  <span class="progress-label">⚛️ Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Model: Matter Made of Particles</div>
+  <div class="header-badge">
+    <span>⚛️</span>
+    <span>Lesson 3.02</span>
+  </div>
+</div>
+
+<!-- HERO — Three boxes: particles arranged tight, loose, and spread out (animated) -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1428"/>
+      <stop offset="60%" stop-color="#102347"/>
+      <stop offset="100%" stop-color="#1a3155"/>
+    </linearGradient>
+    <linearGradient id="boxG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.06)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="920" height="260" fill="url(#bgG)"/>
+
+  <!-- Twinkles -->
+  <circle class="hero-twinkle" cx="80" cy="35" r="1.6" fill="#FFD700"/>
+  <circle class="hero-twinkle" cx="850" cy="50" r="1.5" fill="#9CE3F5"/>
+
+  <!-- Three boxes -->
+  <!-- LEFT: tightly packed particles -->
+  <g transform="translate(70,55)">
+    <rect width="200" height="155" rx="10" fill="url(#boxG)" stroke="#55C8E8" stroke-width="2"/>
+    <!-- Tight grid of particles -->
+    <g fill="#9CE3F5" stroke="#55C8E8" stroke-width="1">
+      <circle class="hero-solid" cx="40" cy="40" r="8"/>
+      <circle class="hero-solid" cx="65" cy="40" r="8"/>
+      <circle class="hero-solid" cx="90" cy="40" r="8"/>
+      <circle class="hero-solid" cx="115" cy="40" r="8"/>
+      <circle class="hero-solid" cx="140" cy="40" r="8"/>
+      <circle class="hero-solid" cx="165" cy="40" r="8"/>
+      <circle class="hero-solid" cx="40" cy="65" r="8"/>
+      <circle class="hero-solid" cx="65" cy="65" r="8"/>
+      <circle class="hero-solid" cx="90" cy="65" r="8"/>
+      <circle class="hero-solid" cx="115" cy="65" r="8"/>
+      <circle class="hero-solid" cx="140" cy="65" r="8"/>
+      <circle class="hero-solid" cx="165" cy="65" r="8"/>
+      <circle class="hero-solid" cx="40" cy="90" r="8"/>
+      <circle class="hero-solid" cx="65" cy="90" r="8"/>
+      <circle class="hero-solid" cx="90" cy="90" r="8"/>
+      <circle class="hero-solid" cx="115" cy="90" r="8"/>
+      <circle class="hero-solid" cx="140" cy="90" r="8"/>
+      <circle class="hero-solid" cx="165" cy="90" r="8"/>
+      <circle class="hero-solid" cx="40" cy="115" r="8"/>
+      <circle class="hero-solid" cx="65" cy="115" r="8"/>
+      <circle class="hero-solid" cx="90" cy="115" r="8"/>
+      <circle class="hero-solid" cx="115" cy="115" r="8"/>
+      <circle class="hero-solid" cx="140" cy="115" r="8"/>
+      <circle class="hero-solid" cx="165" cy="115" r="8"/>
+    </g>
+    <rect x="40" y="135" width="120" height="14" rx="3" fill="#55C8E8"/>
+    <text x="100" y="145" text-anchor="middle" font-size="10" fill="#fff" font-weight="800">tightly packed</text>
+  </g>
+
+  <!-- CENTER: looser particles -->
+  <g transform="translate(355,55)">
+    <rect width="200" height="155" rx="10" fill="url(#boxG)" stroke="#55C8E8" stroke-width="2"/>
+    <g fill="#9CE3F5" stroke="#55C8E8" stroke-width="1">
+      <circle class="hero-liquid-1" cx="40" cy="50" r="8"/>
+      <circle class="hero-liquid-2" cx="70" cy="65" r="8"/>
+      <circle class="hero-liquid-1" cx="105" cy="55" r="8"/>
+      <circle class="hero-liquid-2" cx="140" cy="62" r="8"/>
+      <circle class="hero-liquid-1" cx="170" cy="50" r="8"/>
+      <circle class="hero-liquid-2" cx="50" cy="80" r="8"/>
+      <circle class="hero-liquid-1" cx="85" cy="90" r="8"/>
+      <circle class="hero-liquid-2" cx="120" cy="80" r="8"/>
+      <circle class="hero-liquid-1" cx="155" cy="92" r="8"/>
+      <circle class="hero-liquid-2" cx="40" cy="105" r="8"/>
+      <circle class="hero-liquid-1" cx="75" cy="115" r="8"/>
+      <circle class="hero-liquid-2" cx="110" cy="105" r="8"/>
+      <circle class="hero-liquid-1" cx="140" cy="115" r="8"/>
+      <circle class="hero-liquid-2" cx="170" cy="105" r="8"/>
+    </g>
+    <rect x="50" y="135" width="100" height="14" rx="3" fill="#55C8E8"/>
+    <text x="100" y="145" text-anchor="middle" font-size="10" fill="#fff" font-weight="800">flowing</text>
+  </g>
+
+  <!-- RIGHT: spread out particles -->
+  <g transform="translate(640,55)">
+    <rect width="200" height="155" rx="10" fill="url(#boxG)" stroke="#55C8E8" stroke-width="2"/>
+    <g fill="#9CE3F5" stroke="#55C8E8" stroke-width="1">
+      <circle class="hero-gas-1" cx="40" cy="30" r="7"/>
+      <circle class="hero-gas-2" cx="160" cy="50" r="7"/>
+      <circle class="hero-gas-1" cx="100" cy="70" r="7"/>
+      <circle class="hero-gas-2" cx="170" cy="100" r="7"/>
+      <circle class="hero-gas-1" cx="60" cy="115" r="7"/>
+      <circle class="hero-gas-2" cx="135" cy="130" r="7"/>
+      <circle class="hero-gas-1" cx="180" cy="35" r="7"/>
+    </g>
+    <rect x="35" y="135" width="130" height="14" rx="3" fill="#55C8E8"/>
+    <text x="100" y="145" text-anchor="middle" font-size="10" fill="#fff" font-weight="800">spread far apart</text>
+  </g>
+
+  <!-- Arrows between boxes -->
+  <g class="hero-arrow" transform="translate(290,130)">
+    <polygon points="0,0 50,0 50,-7 65,7 50,21 50,14 0,14" fill="#FFD700" opacity="0.8"/>
+  </g>
+  <g class="hero-arrow" transform="translate(575,130)">
+    <polygon points="0,0 50,0 50,-7 65,7 50,21 50,14 0,14" fill="#FFD700" opacity="0.8"/>
+  </g>
+
+  <!-- Title -->
+  <rect x="280" y="15" width="360" height="28" rx="6" fill="rgba(85,200,232,0.2)" stroke="#55C8E8" stroke-width="1.5"/>
+  <text x="460" y="33" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" fill="#fff" font-weight="800">Same matter. Different arrangements.</text>
+
+  <!-- Floor -->
+  <line x1="40" y1="232" x2="880" y2="232" stroke="#55C8E8" stroke-width="1.5" opacity="0.35"/>
+</svg>
+</div>
+
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q1 · Unit 2</div>
+      <div class="info-detail">Matter and Its Properties</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 3</div>
+      <div class="info-detail">Lesson 3.02 — 5th Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF7EE;">⚛️</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Build a Particle Model</div>
+      <div class="info-detail">Modeling what you can't see</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">5-PS1-1</div>
+      <div class="info-detail">Structure of Matter</div>
+    </div>
+  </div>
+</div>
+
+<div class="intro-2col">
+  <div class="card theme-earth">
+    <div class="card-head">
+      <div class="card-head-icon">🤔</div>
+      <div>
+        <div class="card-head-label">Big Question</div>
+        <div class="card-head-title">Think About This…</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>How can a simple model show us something we can't see at all?</p>
+      <p style="font-size:14px;color:#9A8E82;">Keep this question in mind while you build today.</p>
+    </div>
+  </div>
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Learning Goals</div>
+        <div class="card-head-title">I Can…</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#E8636B;color:#fff;font-weight:800;font-size:13px;margin-right:8px;">1</span>build a particle model that shows how matter is arranged in three different forms.</p>
+      <p><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#D4772C;color:#fff;font-weight:800;font-size:13px;margin-right:8px;">2</span>explain what my model shows — and what it does NOT show.</p>
+      <p style="margin-bottom:0;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#34B76F;color:#fff;font-weight:800;font-size:13px;margin-right:8px;">3</span>use my model to explain something I observed about matter.</p>
+    </div>
+  </div>
+</div>
+
+<div class="need-strip">
+  <span class="need-strip-label">You'll need:</span>
+  <span class="need-chip">📓 Science notebook</span>
+  <span class="need-chip">✏️ Pencil &amp; colored pencils</span>
+  <span class="need-chip">🫘 12 small identical objects (beans, pennies, paper clips, marbles, M&amp;Ms, raisins, LEGOs…)</span>
+  <span class="need-chip">📏 A flat table or counter</span>
+</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Investigate<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- TAB 1: VOCAB -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Lesson 3.02 — Make a Model of Tiny Things</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">⚛️</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 3-02-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#E8636B;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🔍 Notice, Wonder, and Predict</div>
+        <div class="act-subtitle">A smell crosses the room. How?</div>
+      </div>
+      <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>Someone opens a bottle of perfume across the room from you. Five minutes later, you can smell it — clearly. You didn't move. Nobody waved a fan. The bottle never touched you.</p>
+      <p>From yesterday's lesson, you know: smells are matter. They're particles. So somehow, those particles got from over there to right under your nose. <em>How?</em></p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"If you could shrink yourself down and watch what happens, what would the particles in the air look like — and what would they be doing?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-sky">
+        <span class="callout-icon">🔭</span>
+        <p><strong>Write your prediction below.</strong> Use at least two sentences. Sketch isn't required, but you can describe in words how you think the perfume particles got from the bottle to your nose.</p>
+      </div>
+
+      <div class="response-q">
+        <textarea class="response-textarea" id="pred-1"
+          data-label="Prediction"
+          placeholder="I think the perfume particles got to my nose by..."
+          oninput="autoSave(this,'dot-pred-1')"></textarea>
+        <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+          Your prediction<span class="response-save-dot" id="dot-pred-1"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>You've seen four of these words before. <strong>"Model"</strong> is the new one today. <strong>Tap each card to flip it.</strong></p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🧊</div><div class="fc-word">matter</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">matter</div><div class="fc-def">Anything that has mass and takes up space.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">✨</div><div class="fc-word">particle</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">particle</div><div class="fc-def">A tiny piece of matter, far too small to see.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🧩</div><div class="fc-word">model</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">model</div><div class="fc-def">A picture, drawing, or object scientists use to show something they can't easily see.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">⚖️</div><div class="fc-word">mass</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">mass</div><div class="fc-def">How much stuff is in something. Measured in grams.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📦</div><div class="fc-word">volume</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">volume</div><div class="fc-def">How much space something takes up.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏷️</div><div class="fc-word">property</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">property</div><div class="fc-def">A feature that describes matter — like shape, color, or temperature.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-tip" style="margin-top:16px;">
+        <span class="callout-icon">🧩</span>
+        <p><strong>About models:</strong> A globe is a model of Earth. A toy car is a model of a real car. A drawing of your house is a model of your house. Models help us think about things we can't always see or pick up.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- TAB 2: THE LESSON -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Setup &amp; Plan</div>
+        <div class="video-wrap-title">Why Scientists Use Models</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 3-02-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#D4772C;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 Before You Build</div>
+        <div class="act-subtitle">A quick guide to thinking like a model-builder</div>
+      </div>
+      <div class="act-time" style="background:#D4772C;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🧩</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">What a Model Is For</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>A <span class="vtip">model<span class="vtip-box"><span class="vtip-word">model</span>Something scientists use to show what they can't easily see.</span></span> is anything that helps scientists think about something they can't see or touch directly. A globe is a model of Earth. A drawing of a heart in a science book is a model. A toy car is a model of a real car.</p>
+          <p>Today you'll build a model of <span class="vtip">particles<span class="vtip-box"><span class="vtip-word">particle</span>A tiny piece of matter, far too small to see.</span></span> using small objects you can actually pick up — beans, pennies, paper clips, anything small and the same. Each object will stand in for one particle.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"A globe doesn't have mountains you can feel, clouds you can see move, or cities you can visit. So why is it still a useful model of Earth?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">📐</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Three Arrangements of Matter</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>The particles inside <strong>a rock</strong> are packed tightly. They can barely move at all. That's why a rock holds its shape and feels hard. The particles in <strong>water</strong> are still close together, but they slide past each other — that's why water flows and changes shape to fit any container.</p>
+          <p>The particles in <strong>air</strong> are way more spread out. They bounce around fast, with lots of empty space between them. That's how the perfume particles can drift across the room to your nose — they're far apart and constantly moving.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🧪</span>
+            <div>
+              <div class="label">Stop and Reason</div>
+              <div class="question">"Which arrangement would make matter the easiest to squeeze into a smaller space? Why?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">⚠️</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">What Models Can't Do</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Every model leaves something out. Beans on a table aren't the same as real particles. Real particles are billions of times smaller. They're constantly moving — beans on your table won't be. And real particles can stack, slide, and bump in three dimensions, not just two.</p>
+          <p><strong>Real-World Connection:</strong> Even professional scientists know their models aren't perfect. The point of a model isn't to be exactly right. It's to make a hard idea easier to think about — and to help you explain what you see.</p>
+        </div>
+      </div>
+
+      <div class="key-concept">
+        <div class="kc-label">🔑 Key Concept</div>
+        <p>A model shows the big idea, even if it leaves things out. A particle model lets us see the difference between matter that's packed tight, matter that flows, and matter that spreads out.</p>
+      </div>
+
+      <!-- Interactive diagram -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap each box to learn how the particles behave
+        </div>
+        <p style="font-size:15px;color:#5A4D3E;margin-bottom:10px;line-height:1.65;">Here are three boxes showing how matter particles can be arranged. Tap each one to find out what's going on inside — and to see an example of matter that looks that way.</p>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;max-width:100%;height:auto;" role="img" aria-label="Three particle models">
+            <rect width="720" height="360" fill="#FAF7F3" rx="12" stroke="#c8b896" stroke-width="2"/>
+
+            <!-- Labels -->
+            <rect x="20" y="20" width="200" height="28" rx="6" fill="#34B76F"/>
+            <text x="120" y="38" text-anchor="middle" font-size="13" fill="#fff" font-weight="800">A rock (tightly packed)</text>
+            <rect x="260" y="20" width="200" height="28" rx="6" fill="#55C8E8"/>
+            <text x="360" y="38" text-anchor="middle" font-size="13" fill="#fff" font-weight="800">Water (close but flowing)</text>
+            <rect x="500" y="20" width="200" height="28" rx="6" fill="#D4772C"/>
+            <text x="600" y="38" text-anchor="middle" font-size="13" fill="#fff" font-weight="800">Air (spread out)</text>
+
+            <!-- LEFT box: tight grid -->
+            <rect x="20" y="60" width="200" height="180" rx="8" fill="#fff" stroke="#34B76F" stroke-width="2"/>
+            <g fill="#9CE3F5" stroke="#34B76F" stroke-width="1.5">
+              <circle cx="50" cy="85" r="10"/><circle cx="75" cy="85" r="10"/><circle cx="100" cy="85" r="10"/><circle cx="125" cy="85" r="10"/><circle cx="150" cy="85" r="10"/><circle cx="175" cy="85" r="10"/><circle cx="200" cy="85" r="10"/>
+              <circle cx="50" cy="110" r="10"/><circle cx="75" cy="110" r="10"/><circle cx="100" cy="110" r="10"/><circle cx="125" cy="110" r="10"/><circle cx="150" cy="110" r="10"/><circle cx="175" cy="110" r="10"/><circle cx="200" cy="110" r="10"/>
+              <circle cx="50" cy="135" r="10"/><circle cx="75" cy="135" r="10"/><circle cx="100" cy="135" r="10"/><circle cx="125" cy="135" r="10"/><circle cx="150" cy="135" r="10"/><circle cx="175" cy="135" r="10"/><circle cx="200" cy="135" r="10"/>
+              <circle cx="50" cy="160" r="10"/><circle cx="75" cy="160" r="10"/><circle cx="100" cy="160" r="10"/><circle cx="125" cy="160" r="10"/><circle cx="150" cy="160" r="10"/><circle cx="175" cy="160" r="10"/><circle cx="200" cy="160" r="10"/>
+              <circle cx="50" cy="185" r="10"/><circle cx="75" cy="185" r="10"/><circle cx="100" cy="185" r="10"/><circle cx="125" cy="185" r="10"/><circle cx="150" cy="185" r="10"/><circle cx="175" cy="185" r="10"/><circle cx="200" cy="185" r="10"/>
+              <circle cx="50" cy="210" r="10"/><circle cx="75" cy="210" r="10"/><circle cx="100" cy="210" r="10"/><circle cx="125" cy="210" r="10"/><circle cx="150" cy="210" r="10"/><circle cx="175" cy="210" r="10"/><circle cx="200" cy="210" r="10"/>
+            </g>
+
+            <!-- CENTER box: loose -->
+            <rect x="260" y="60" width="200" height="180" rx="8" fill="#fff" stroke="#55C8E8" stroke-width="2"/>
+            <g fill="#9CE3F5" stroke="#55C8E8" stroke-width="1.5">
+              <circle cx="290" cy="90" r="10"/><circle cx="320" cy="100" r="10"/><circle cx="355" cy="90" r="10"/><circle cx="395" cy="100" r="10"/><circle cx="430" cy="92" r="10"/>
+              <circle cx="295" cy="125" r="10"/><circle cx="335" cy="120" r="10"/><circle cx="370" cy="130" r="10"/><circle cx="405" cy="125" r="10"/><circle cx="440" cy="120" r="10"/>
+              <circle cx="285" cy="160" r="10"/><circle cx="325" cy="155" r="10"/><circle cx="360" cy="165" r="10"/><circle cx="395" cy="160" r="10"/><circle cx="430" cy="155" r="10"/>
+              <circle cx="295" cy="195" r="10"/><circle cx="330" cy="200" r="10"/><circle cx="370" cy="195" r="10"/><circle cx="405" cy="200" r="10"/><circle cx="440" cy="190" r="10"/>
+              <circle cx="290" cy="225" r="10"/><circle cx="335" cy="220" r="10"/><circle cx="370" cy="225" r="10"/><circle cx="405" cy="220" r="10"/><circle cx="435" cy="225" r="10"/>
+            </g>
+
+            <!-- RIGHT box: spread out -->
+            <rect x="500" y="60" width="200" height="180" rx="8" fill="#fff" stroke="#D4772C" stroke-width="2"/>
+            <g fill="#9CE3F5" stroke="#D4772C" stroke-width="1.5">
+              <circle cx="540" cy="90" r="8"/>
+              <circle cx="640" cy="105" r="8"/>
+              <circle cx="580" cy="135" r="8"/>
+              <circle cx="675" cy="155" r="8"/>
+              <circle cx="535" cy="180" r="8"/>
+              <circle cx="620" cy="195" r="8"/>
+              <circle cx="570" cy="220" r="8"/>
+            </g>
+
+            <!-- Captions below boxes -->
+            <text x="120" y="265" text-anchor="middle" font-size="12" fill="#0E1C42" font-weight="700">holds its shape</text>
+            <text x="120" y="282" text-anchor="middle" font-size="11" fill="#5A4D3E">barely moves</text>
+
+            <text x="360" y="265" text-anchor="middle" font-size="12" fill="#0E1C42" font-weight="700">flows, changes shape</text>
+            <text x="360" y="282" text-anchor="middle" font-size="11" fill="#5A4D3E">slides past itself</text>
+
+            <text x="600" y="265" text-anchor="middle" font-size="12" fill="#0E1C42" font-weight="700">fills any space</text>
+            <text x="600" y="282" text-anchor="middle" font-size="11" fill="#5A4D3E">drifts and bounces fast</text>
+
+            <!-- Hotspots -->
+            <rect class="hotspot" data-part="solid" data-info="A rock (tightly packed) | The particles are squeezed close together in a regular pattern. They barely move — they just vibrate in place. That's why a rock holds its shape and feels hard. You can't squish or flatten it." x="20" y="60" width="200" height="180" rx="8" fill="#34B76F"/>
+            <rect class="hotspot" data-part="liquid" data-info="Water (close but flowing) | The particles are still close together, but they can slide past each other. That's why water flows into any cup you pour it into. It still takes up the same amount of space — it just changes shape." x="260" y="60" width="200" height="180" rx="8" fill="#55C8E8"/>
+            <rect class="hotspot" data-part="gas" data-info="Air (spread far apart) | The particles are way far apart and moving fast. There's lots of empty space between them. That's why a smell can drift across a room — the particles bounce all the way to your nose. Air also fills any container you put it in." x="500" y="60" width="200" height="180" rx="8" fill="#D4772C"/>
+          </svg>
+          <div style="background:linear-gradient(135deg,#EAF8FD,#D6F2FB);border:2px solid #B8E2F0;border-radius:14px;padding:12px 18px;margin-top:10px;display:flex;align-items:center;gap:12px;">
+            <span style="font-size:28px;flex-shrink:0;animation:mind-blow-bounce 2s ease-in-out infinite;">👆</span>
+            <p style="font-size:15px;color:#0E1C42;line-height:1.55;margin:0;font-weight:600;">Tap each box to see how the particles behave inside.</p>
+          </div>
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-caption">Three arrangements. Same kind of particles. Very different behavior.</div>
+      </div>
+
+      <div class="mind-blow">
+        <div class="mind-blow-icon">🤯</div>
+        <div class="mind-blow-content">
+          <div class="mind-blow-label">Mind-Blowing Fact</div>
+          <div class="mind-blow-text">In the air around you right now, particles are moving at roughly <strong>1,000 miles per hour</strong> — bouncing off each other billions of times per second. You don't feel it because each one is unimaginably tiny.</div>
+        </div>
+      </div>
+
+      <details class="go-deeper">
+        <summary>Go Deeper — When the same matter changes its arrangement</summary>
+        <div class="gd-body">
+          <p>Here's something cool: the particles in ice, water, and steam are <em>exactly the same kind of particle</em>. The only difference is how they're arranged. In ice, they're packed tight in a pattern. In water, they're loose. In steam, they're way spread out and zooming around.</p>
+          <p>That means when ice melts, no new matter shows up. The particles just stop holding hands and start sliding around. When water boils away, the particles just spread far apart. Same stuff. Different arrangement.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Investigate →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- TAB 3: INVESTIGATE — BUILD THE MODEL -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Build the Model</div>
+        <div class="video-wrap-title">Make Your Own Particle Model</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Model-building video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 3-02-investigation-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#55C8E8;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Build, Sketch, Explain</div>
+        <div class="act-subtitle">Three arrangements with your own particles</div>
+      </div>
+      <div class="act-time" style="background:#55C8E8;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>You're going to build three particle models on your table — one for a rock, one for water, and one for air. Each "particle" will be one of your small objects (a bean, a penny, a paper clip — whatever you have 12 of).</p>
+
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Reference · A homemade particle model</div>
+        <img
+          src="images/3-02-bean-particle-model.jpg"
+          alt="A top-down photo of 12 dried beans arranged on a wooden table in a tight grid pattern, representing particles tightly packed together in a solid."
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';"
+        />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            Photorealistic top-down photo of 12 small dried beans (kidney or pinto) arranged on a clean wooden tabletop in a neat 3-by-4 grid, all touching each other. Soft daylight, sharp focus. No hands, no text overlay, no white background. Wood grain visible.
+          </div>
+          <div class="image-suggestion-file">Save as: images/3-02-bean-particle-model.jpg</div>
+        </div>
+        <div class="lesson-figure-caption">
+          This is what one arrangement looks like — 12 beans pretending to be 12 particles in a rock. Tomorrow you'll do all three.
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div style="display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,#55C8E8,#34B76F);border-radius:50%;color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+          <p style="font-size:16px;color:#0E1C42;font-weight:700;margin-bottom:4px;">Gather your "particles"</p>
+          <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">Pick something you have 12 of — dried beans, pennies, paper clips, LEGO bricks, M&amp;Ms, raisins, dry pasta. They should all look the same. Spread them out on a clear table or counter.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div style="display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,#55C8E8,#34B76F);border-radius:50%;color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+          <p style="font-size:16px;color:#0E1C42;font-weight:700;margin-bottom:4px;">Model 1: A rock</p>
+          <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">Arrange all 12 of your particles to show how they're packed in a rock. They should be <strong>touching, in a pattern, not moving.</strong> Take 10 seconds to study what it looks like. Sketch it in your notebook. Label the sketch <em>"Rock — tightly packed."</em></p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div style="display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,#55C8E8,#34B76F);border-radius:50%;color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+          <p style="font-size:16px;color:#0E1C42;font-weight:700;margin-bottom:4px;">Model 2: Water</p>
+          <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">Now slide the particles slightly apart, so they're <strong>still close, but not touching in a neat pattern.</strong> Imagine they're moving and bumping into each other. Sketch this arrangement too. Label it <em>"Water — close but flowing."</em></p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div style="display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,#55C8E8,#34B76F);border-radius:50%;color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
+        <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+          <p style="font-size:16px;color:#0E1C42;font-weight:700;margin-bottom:4px;">Model 3: Air</p>
+          <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">Spread the particles way out — across the whole table, with lots of space between them. Imagine they're zipping around at full speed. Sketch this arrangement. Label it <em>"Air — spread far apart."</em> Add little arrows showing how fast they'd be moving.</p>
+        </div>
+      </div>
+
+      <!-- Data Table -->
+      <div class="student-chart-wrap">
+        <div class="student-chart-label">📋 Compare your models — copy into your notebook</div>
+        <table class="student-chart">
+          <thead>
+            <tr>
+              <th style="width:25%;">My model of…</th>
+              <th>How close are the particles?</th>
+              <th>How much are they moving?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="row-label">Rock</td><td></td><td></td></tr>
+            <tr><td class="row-label">Water</td><td></td><td></td></tr>
+            <tr><td class="row-label">Air</td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Step 5 -->
+      <div style="display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,#55C8E8,#34B76F);border-radius:50%;color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div>
+        <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+          <p style="font-size:16px;color:#0E1C42;font-weight:700;margin-bottom:4px;">Find your model's limits</p>
+          <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">Look at your three sketches. What do they show really well? What do they NOT show? (Hint: real particles are moving constantly. Real particles can stack on top of each other. Your beans can't do that.)</p>
+        </div>
+      </div>
+
+      <div class="card theme-magma scroll-reveal" style="margin-top:10px;">
+        <div class="card-head">
+          <div class="card-head-icon">📝</div>
+          <div>
+            <div class="card-head-label">Record Your Thinking</div>
+            <div class="card-head-title">What Did You Find?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p style="font-size:15px;color:#5A4D3E;margin-bottom:10px;">Answer in complete sentences using your sketches.</p>
+
+          <div class="pq">
+            <span class="pq-num" style="background:#D4772C;">1</span>
+            <span class="pq-text">Describe how your rock model is different from your air model. Use the words "close" and "spread."</span>
+          </div>
+          <div class="response-q">
+            <textarea class="response-textarea ta-sm" id="ryt-1"
+              data-label="Investigate — Q1: Rock vs Air"
+              placeholder="In my rock model, the particles are... In my air model, they are..."
+              oninput="autoSave(this,'dot-ryt-1')"></textarea>
+            <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+              Your answer<span class="response-save-dot" id="dot-ryt-1"></span>
+            </span>
+          </div>
+
+          <div class="pq" style="margin-top:14px;">
+            <span class="pq-num" style="background:#D4772C;">2</span>
+            <span class="pq-text">Use your air model to explain how the perfume smell traveled across the room. Use the word "particle."</span>
+          </div>
+          <div class="response-q">
+            <textarea class="response-textarea ta-sm" id="ryt-2"
+              data-label="Investigate — Q2: Perfume explanation"
+              placeholder="The perfume smell traveled because the particles..."
+              oninput="autoSave(this,'dot-ryt-2')"></textarea>
+            <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+              Your answer<span class="response-save-dot" id="dot-ryt-2"></span>
+            </span>
+          </div>
+
+          <div class="pq" style="margin-top:14px;">
+            <span class="pq-num" style="background:#D4772C;">3</span>
+            <span class="pq-text">Name one thing your model DOES show well. Name one thing it does NOT show.</span>
+          </div>
+          <div class="response-q">
+            <textarea class="response-textarea ta-sm" id="ryt-3"
+              data-label="Investigate — Q3: Model limits"
+              placeholder="My model shows ___ well. My model does not show..."
+              oninput="autoSave(this,'dot-ryt-3')"></textarea>
+            <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+              Your answer<span class="response-save-dot" id="dot-ryt-3"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card theme-rock scroll-reveal" style="margin-top:10px;">
+        <div class="card-head">
+          <div class="card-head-icon">💬</div>
+          <div>
+            <div class="card-head-label">Discuss and Defend</div>
+            <div class="card-head-title">Use Your Model</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p style="font-size:15px;color:#5A4D3E;margin-bottom:10px;">Think about these. Be ready to explain your reasoning.</p>
+
+          <div class="socratic-q">
+            <span class="sq-icon">⚔️</span>
+            <div>
+              <div class="label">Defend Your Thinking</div>
+              <div class="question">"A friend says, 'Beans on a table aren't really particles. So your model is wrong.' How would you respond? What is a model actually FOR?"</div>
+            </div>
+          </div>
+
+          <div class="socratic-q">
+            <span class="sq-icon">🔍</span>
+            <div>
+              <div class="label">Compare the Evidence</div>
+              <div class="question">"Which of your three models do you think helped you understand particles the most? Why?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- TAB 4: QUIZ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card">
+    <div style="display:flex;align-items:center;gap:12px;padding:16px 22px;background:linear-gradient(135deg,#FFF7DC,#FFF3C4);border-bottom:2px solid #F5E6A8;">
+      <div style="width:48px;height:48px;background:#F5A623;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;">🧠</div>
+      <div>
+        <div style="font-size:11px;color:#B8860B;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;">Self-Check</div>
+        <div style="font-size:22px;color:#0E1C42;font-weight:800;line-height:1.2;">Quick Self-Check</div>
+        <div style="font-size:13px;color:#9A8E82;font-weight:600;">Not graded — just for you! See how much you understand.</div>
+      </div>
+    </div>
+
+    <div style="padding:22px 24px;">
+
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">In a particle model of a rock, how should the particles be arranged?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Spread far apart, with lots of empty space</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Packed tightly together, barely moving</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Close together but sliding past each other</div>
+        </div>
+        <div class="quiz-feedback fb-correct">✅ Correct! Rock particles are squeezed tight in a pattern. They mostly vibrate in place. That's why a rock holds its shape and feels hard.</div>
+        <div class="quiz-feedback fb-wrong">❌ Not quite. A rock holds its shape — it doesn't flow or drift. Which arrangement of particles would make matter hold its shape like a rock?</div>
+      </div>
+
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">A model leaves things out about the real thing. That means a model is:</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>useless — it doesn't show the truth</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>only good if scientists agree on every detail</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>useful for showing big ideas, even if it isn't perfect</div>
+        </div>
+        <div class="quiz-feedback fb-correct">✅ Correct! Every model leaves something out. That's okay — a model's job is to make a hard idea easier to think about, not to be perfect.</div>
+        <div class="quiz-feedback fb-wrong">❌ Not quite. All models simplify reality — even the best ones. That's part of what makes a model useful: it shows the main idea without distracting details.</div>
+      </div>
+
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">Why can a smell drift across an entire room?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Particles in the air are spread out and moving fast, so they bounce all the way across the room.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Smells aren't really matter — they just appear in your nose.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Smells travel by jumping through walls.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">✅ Correct! Smells are particles. Air particles are far apart and zooming around, so they can travel a long way until they reach your nose.</div>
+        <div class="quiz-feedback fb-wrong">❌ Not quite. Smells ARE matter — tiny particles. The reason they can travel is what the particles in air are doing. Look back at your air model.</div>
+      </div>
+
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num"><span id="quizScoreNum">0</span>/3</div>
+        <div class="quiz-score-label">Questions Correct</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+      </div>
+
+      <div class="quiz-video-conditional" id="quizVideoPerfect">
+        <div class="video-wrap">
+          <div class="video-wrap-header">
+            <span style="font-size:20px;">🎉</span>
+            <div>
+              <div class="video-wrap-type">Perfect Score · Bonus Content</div>
+              <div class="video-wrap-title">Bonus — what happens when matter changes form?</div>
+            </div>
+          </div>
+          <div class="video-ratio">
+            <div class="video-placeholder">
+              <div class="video-placeholder-icon">🌟</div>
+              <div class="video-placeholder-text">Bonus video coming soon</div>
+              <div class="video-placeholder-id"><!-- slot: 3-02-quiz-perfect --></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-video-conditional" id="quizVideoReview">
+        <div class="video-wrap">
+          <div class="video-wrap-header">
+            <span style="font-size:20px;">🔄</span>
+            <div>
+              <div class="video-wrap-type">Review · Keep Going</div>
+              <div class="video-wrap-title">Let's review the three arrangements.</div>
+            </div>
+          </div>
+          <div class="video-ratio">
+            <div class="video-placeholder">
+              <div class="video-placeholder-icon">📖</div>
+              <div class="video-placeholder-text">Review video coming soon</div>
+              <div class="video-placeholder-id"><!-- slot: 3-02-quiz-review --></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- TAB 5: ASSIGNMENT -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Assignment · What To Do</div>
+        <div class="video-wrap-title">Here's What to Do — Sketch &amp; Explain Your Model</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 3-02-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">📐 Part A — Three-Panel Model Sketch</p>
+  <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Take a clear photo of all three of your model sketches from the Investigate tab. Each sketch should have a title and the particles shown as small circles or dots.</p>
+
+  <div class="pq">
+    <span class="pq-num" style="background:#E8636B;">1</span>
+    <span class="pq-text"><strong>Caption your sketches:</strong> In the box below, type one sentence per arrangement describing what your particles are doing in each model. (Example: "Rock — particles are packed tight and vibrating in place.")</span>
+  </div>
+  <div class="response-q">
+    <textarea class="response-textarea ta-sm" id="parta-1"
+      data-label="Part A — Sketch captions"
+      placeholder="Rock: ___ | Water: ___ | Air: ___"
+      oninput="autoSave(this,'dot-parta-1')"></textarea>
+    <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+      Your answer<span class="response-save-dot" id="dot-parta-1"></span>
+    </span>
+  </div>
+
+  <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">📊 Part B — Evidence Questions</p>
+  <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in complete sentences using your models.</p>
+
+  <div class="pq">
+    <span class="pq-num" style="background:#D4772C;">2</span>
+    <span class="pq-text">Compare your rock model to your water model. List one thing that's the same about the particles in both, and one thing that's different.</span>
+  </div>
+  <div class="response-q">
+    <textarea class="response-textarea ta-sm" id="partb-1"
+      data-label="Part B — Q1: Rock vs water"
+      placeholder="Same: ___. Different: ___."
+      oninput="autoSave(this,'dot-partb-1')"></textarea>
+    <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+      Your answer<span class="response-save-dot" id="dot-partb-1"></span>
+    </span>
+  </div>
+
+  <div class="pq">
+    <span class="pq-num" style="background:#D4772C;">3</span>
+    <span class="pq-text">Imagine you sealed your air model inside a box. Then you took the box and shook it. Why would the particles still be hard to see, even if they were really there?</span>
+  </div>
+  <div class="response-q">
+    <textarea class="response-textarea ta-sm" id="partb-2"
+      data-label="Part B — Q2: Why you can't see them"
+      placeholder="Even though the particles are moving, they would be hard to see because..."
+      oninput="autoSave(this,'dot-partb-2')"></textarea>
+    <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+      Your answer<span class="response-save-dot" id="dot-partb-2"></span>
+    </span>
+  </div>
+
+  <div class="pq">
+    <span class="pq-num" style="background:#D4772C;">4</span>
+    <span class="pq-text">List two things your bean model does NOT show about real particles. (Think about speed, size, and how many there really are.)</span>
+  </div>
+  <div class="response-q">
+    <textarea class="response-textarea ta-sm" id="partb-3"
+      data-label="Part B — Q3: What the model misses"
+      placeholder="My model does not show... and..."
+      oninput="autoSave(this,'dot-partb-3')"></textarea>
+    <span style="font-size:12px;color:#9A8E82;font-weight:600;">
+      Your answer<span class="response-save-dot" id="dot-partb-3"></span>
+    </span>
+  </div>
+
+  <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">✍️ Part C — Claim · Evidence · Reasoning</p>
+  <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Aim for 4–6 sentences total.</p>
+
+  <div class="cer-block">
+    <div class="cer-header">
+      <span class="cer-icon">⚛️</span>
+      <div class="cer-header-text">
+        <div class="cer-label">Claim · Evidence · Reasoning</div>
+        <div class="cer-question">Use your particle model to explain how the perfume smell could travel across the room. Why does the model help us understand something we can't see?</div>
+      </div>
+    </div>
+
+    <div class="cer-section">
+      <div class="cer-badge cer-badge-claim">C</div>
+      <div class="cer-section-body">
+        <div class="cer-section-title">Claim <span class="cer-section-hint">— What do you think is happening?</span></div>
+        <div class="cer-write-box">
+          <p class="cer-starter">💡 Start with: <em>"The perfume smell travels because particles in the air…"</em></p>
+          <textarea class="response-textarea ta-sm" id="cer-claim"
+            data-label="Part C — Claim"
+            placeholder="The perfume smell travels because particles in the air..."
+            oninput="autoSave(this,'dot-cer-claim')"></textarea>
+          <span style="font-size:12px;color:#9A8E82;font-weight:600;display:block;margin-top:4px;">
+            Your claim<span class="response-save-dot" id="dot-cer-claim"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cer-section">
+      <div class="cer-badge cer-badge-evidence">E</div>
+      <div class="cer-section-body">
+        <div class="cer-section-title">Evidence <span class="cer-section-hint">— What does your air model show?</span></div>
+        <div class="cer-write-box">
+          <p class="cer-starter">💡 Start with: <em>"In my air model, I arranged the particles…"</em></p>
+          <textarea class="response-textarea ta-sm" id="cer-evidence"
+            data-label="Part C — Evidence"
+            placeholder="In my air model, I arranged the particles..."
+            oninput="autoSave(this,'dot-cer-evidence')"></textarea>
+          <span style="font-size:12px;color:#9A8E82;font-weight:600;display:block;margin-top:4px;">
+            Your evidence<span class="response-save-dot" id="dot-cer-evidence"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cer-section">
+      <div class="cer-badge cer-badge-reason">R</div>
+      <div class="cer-section-body">
+        <div class="cer-section-title">Reasoning <span class="cer-section-hint">— Why does this model help explain what we can't see?</span></div>
+        <div class="cer-write-box">
+          <p class="cer-starter">💡 Start with: <em>"This model helps explain it because…"</em></p>
+          <textarea class="response-textarea ta-sm" id="cer-reasoning"
+            data-label="Part C — Reasoning"
+            placeholder="This model helps explain it because..."
+            oninput="autoSave(this,'dot-cer-reasoning')"></textarea>
+          <span style="font-size:12px;color:#9A8E82;font-weight:600;display:block;margin-top:4px;">
+            Your reasoning<span class="response-save-dot" id="dot-cer-reasoning"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cer-vocab-check">
+      📚 <strong>Vocab check:</strong> Use at least two of these words: <strong>model</strong>, <strong>particle</strong>, <strong>matter</strong>, <strong>mass</strong>, <strong>property</strong>
+    </div>
+  </div>
+
+  <div class="revise-block">
+    <div class="revise-header">
+      <span class="revise-icon">🔄</span>
+      <div>
+        <div class="revise-label">Revise Your Thinking</div>
+        <div class="revise-question">Look back at your prediction about the perfume.</div>
+      </div>
+    </div>
+    <div class="revise-prompts">
+      <p>Write 3–4 sentences answering these:</p>
+      <ul>
+        <li>How did you describe the perfume traveling at the start?</li>
+        <li>What does your model help you explain now that you couldn't before?</li>
+        <li>What's one thing about real particles your model still can't show?</li>
+      </ul>
+    </div>
+    <div class="cer-write-box" style="margin-top:14px;">
+      <textarea class="response-textarea ta-lg" id="revise-1"
+        data-label="Revise Your Thinking"
+        placeholder="At first I said... Now my model lets me explain... My model still can't show..."
+        oninput="autoSave(this,'dot-revise-1')"></textarea>
+      <span style="font-size:12px;color:#9A8E82;font-weight:600;display:block;margin-top:4px;">
+        Your reflection<span class="response-save-dot" id="dot-revise-1"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="gathered-card">
+    <div class="gathered-header">
+      <div class="gathered-header-icon">📋</div>
+      <div>
+        <div class="gathered-header-label">Lesson 3.02 · Submission Packet</div>
+        <div class="gathered-header-title">Gathered Answers</div>
+      </div>
+    </div>
+    <div class="gathered-body">
+      <div class="gathered-intro">All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.</div>
+      <div class="gathered-name-row">
+        <span class="gathered-name-label">Your name:</span>
+        <input type="text" class="gathered-name-input" id="student-name" placeholder="Type your name here" oninput="refreshGathered()" />
+      </div>
+      <textarea class="gathered-output" id="gatheredOutput" readonly></textarea>
+      <div class="gathered-actions">
+        <button class="gathered-btn" onclick="copyGathered()">📋 Copy to Clipboard</button>
+        <button class="gathered-btn gathered-btn-download" onclick="downloadGathered()">⬇ Download as Text</button>
+      </div>
+      <div class="gathered-copied" id="copiedMsg">Copied! Paste into your Canvas text box to turn in.</div>
+    </div>
+  </div>
+
+  <div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden;">
+    <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #B8E2F0;">
+      <div style="width:42px;height:42px;border-radius:50%;background:#55C8E8;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📬</div>
+      <div>
+        <div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;">Time to Submit</div>
+        <div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2;">What to Turn In</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+      <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">When you've finished, copy your gathered answers above into Canvas, plus a photo of your three sketches. Use this checklist before you submit.</p>
+
+      <div class="turn-in-checklist">
+
+        <div class="turn-in-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+          <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;"></span>
+          <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A — Sketches:</strong> All three particle arrangements drawn and labeled (Rock, Water, Air), with one-sentence captions.</span>
+        </div>
+
+        <div class="turn-in-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+          <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;"></span>
+          <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B — Evidence Questions:</strong> All three answered in complete sentences, using your models as evidence.</span>
+        </div>
+
+        <div class="turn-in-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+          <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;"></span>
+          <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C — CER:</strong> Claim, evidence from your air model, and reasoning that connects to the perfume.</span>
+        </div>
+
+        <div class="turn-in-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+          <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;"></span>
+          <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Revise Your Thinking:</strong> 3–4 sentences comparing your first prediction to your final explanation.</span>
+        </div>
+
+        <div class="turn-in-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+          <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;"></span>
+          <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Vocab Check:</strong> At least two lesson words used accurately.</span>
+        </div>
+
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;">
+        <div style="background:#EEF8F0;border:1.5px solid #C4E5CC;border-radius:12px;padding:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:4px;">⌨️</div>
+          <div style="font-size:14px;color:#0E1C42;font-weight:700;">Type It</div>
+          <div style="font-size:12px;color:#5A4D3E;">Type your answers directly into Canvas</div>
+        </div>
+        <div style="background:#EAF8FD;border:1.5px solid #D6F2FB;border-radius:12px;padding:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:4px;">📸</div>
+          <div style="font-size:14px;color:#0E1C42;font-weight:700;">Photo It</div>
+          <div style="font-size:12px;color:#5A4D3E;">Take a clear photo of your notebook sketches</div>
+        </div>
+        <div style="background:#FFF7EE;border:1.5px solid #F0DCC4;border-radius:12px;padding:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:4px;">🎥</div>
+          <div style="font-size:14px;color:#0E1C42;font-weight:700;">Record It</div>
+          <div style="font-size:12px;color:#5A4D3E;">Record yourself explaining your model</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="video-wrap" style="margin-top:20px;">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">👋</span>
+      <div>
+        <div class="video-wrap-type">Wrap-Up · Closing Video</div>
+        <div class="video-wrap-title">You just modeled something you can't see.</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🌟</div>
+        <div class="video-placeholder-text">Closing video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 3-02-closing --></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<footer class="footer">
+  <div class="footer-line1">Optima Academy Online &mdash; <span>5th Grade Science</span></div>
+  <div class="footer-line2">Module 3 · Lesson 3.02 — Model: Matter Made of Particles · 5-PS1-1</div>
+  <div class="footer-line3">© Optima Academy Online. All rights reserved.</div>
+</footer>
+
+<button class="back-to-top" id="backToTop" type="button">⚛️ Back to Top</button>
+<canvas id="confettiCanvas"></canvas>
+
+</div><!-- /page-wrap -->
+
+<script>
+var LESSON_EMOJI = '⚛️';
+var TAB_COUNT = 5;
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+function switchTab(id) {
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelector('[data-tab="' + id + '"]').classList.add('active');
+  document.querySelector('[data-tab="' + id + '"]').classList.add('visited');
+  document.getElementById('tab-' + id).classList.add('active');
+  tabProgress[id] = true;
+  updateProgress();
+  var inIframe = (function(){ try { return window.self !== window.top; } catch(e){ return true; } })();
+  if (inIframe) { try { window.parent.scrollTo(0, 0); } catch(e){} try { document.getElementById('pageTop').scrollIntoView(); } catch(e){} }
+  else { window.scrollTo(0, 0); }
+}
+function updateProgress() {
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / TAB_COUNT) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+}
+(function(){
+  var panel = document.getElementById('diagramPanel'); if (!panel) return;
+  var wordEl = document.getElementById('diagramWord');
+  var infoEl = document.getElementById('diagramInfo');
+  var hotspots = document.querySelectorAll('.diagram-interactive .hotspot');
+  hotspots.forEach(function(hs){
+    hs.addEventListener('click', function(e){
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var raw = hs.getAttribute('data-info') || '';
+      var parts = raw.split('|');
+      wordEl.textContent = parts[0] ? parts[0].trim() : '';
+      infoEl.textContent = parts[1] ? parts[1].trim() : raw;
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e){
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+var quizAnswered = 0, quizCorrect = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q'); if (q.classList.contains('answered')) return;
+  q.classList.add('answered'); quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen = optEl.getAttribute('data-val');
+  var opts = q.querySelectorAll('.quiz-opt');
+  opts.forEach(function(o){ if (o.getAttribute('data-val') === correct) o.classList.add('correct'); else o.classList.add('disabled'); });
+  var fbCorrect = q.querySelector('.fb-correct'); var fbWrong = q.querySelector('.fb-wrong');
+  if (chosen === correct) { quizCorrect++; optEl.classList.add('correct'); if (fbCorrect) fbCorrect.classList.add('show'); }
+  else { optEl.classList.add('wrong'); if (fbWrong) fbWrong.classList.add('show'); }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) { scoreMsg.textContent = '🎉 Perfect score! You just modeled something invisible — that\'s real science.'; setTimeout(window.launchConfetti, 300); var vp = document.getElementById('quizVideoPerfect'); if (vp) vp.classList.add('show'); }
+    else if (quizCorrect === 2) { scoreMsg.textContent = '🌟 Great work! Look back at the one you missed.'; var vr = document.getElementById('quizVideoReview'); if (vr) vr.classList.add('show'); }
+    else { scoreMsg.textContent = '👍 Good effort! Go back and study the three particle arrangements.'; var vr2 = document.getElementById('quizVideoReview'); if (vr2) vr2.classList.add('show'); }
+    scoreBox.classList.add('show');
+  }
+}
+document.querySelectorAll('.vtip').forEach(function(tip){
+  var box = tip.querySelector('.vtip-box'); if (!box) return;
+  tip.addEventListener('mouseenter', function(){
+    var rect = tip.getBoundingClientRect(); var bw = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (icon) icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
+  var checklist = item.closest('.turn-in-checklist'); if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item'); if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){ return it.classList.contains('checked'); });
+  if (allChecked) setTimeout(window.launchConfetti, 200);
+}
+(function(){
+  var btn = document.getElementById('backToTop'); if (!btn) return;
+  btn.textContent = LESSON_EMOJI + ' Back to Top';
+  var inIframe = (function(){ try { return window.self !== window.top; } catch(e){ return true; } })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(e) {}
+    document.documentElement.scrollTop = 0; document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) { try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch(e) {} }
+    try { if (window.frameElement && window.frameElement.scrollIntoView) window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch(e) {}
+    if (inIframe) { try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch(e) {} }
+  });
+  if (inIframe) setTimeout(function() { btn.classList.add('show'); }, 1500);
+  else window.addEventListener('scroll', function() { btn.classList.toggle('show', window.pageYOffset > 400); });
+})();
+(function(){
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#55C8E8','#34B76F','#F5A623','#FFD700','#8B6FC0','#E8636B','#1A6FA8','#D4772C'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x,y){ this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4; this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4; this.color=colors[Math.floor(Math.random()*colors.length)]; this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12; this.opacity=1; this.shape=Math.random()>.5?'rect':'circle'; }
+  function burst(x,y,count){ for(var i=0;i<count;i++) particles.push(new Particle(x,y)); if(!animating){animating=true;animate();} }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){particles.splice(i,1);return;}
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect')ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6);
+      else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}
+      ctx.restore();
+    });
+    if(particles.length>0)requestAnimationFrame(animate); else{animating=false;ctx.clearRect(0,0,canvas.width,canvas.height);}
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.4, 50);
+    burst(cx, window.innerHeight*.3, 60);
+    burst(cx+100, window.innerHeight*.4, 50);
+  };
+})();
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress.vocab = true; updateProgress();
+(function(){
+  var progressBar = document.querySelector('.progress-wrap');
+  var tabBar = document.querySelector('.tab-bar');
+  if (!progressBar || !tabBar) return;
+  function alignTabBar() { tabBar.style.top = progressBar.offsetHeight + 'px'; }
+  alignTabBar();
+  window.addEventListener('resize', alignTabBar);
+})();
+(function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    var container = q.querySelector('.quiz-options'); if (!container) return;
+    var opts = Array.prototype.slice.call(container.querySelectorAll('.quiz-opt'));
+    for (var i = opts.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      container.appendChild(opts[j]);
+      var tmp = opts[i]; opts[i] = opts[j]; opts[j] = tmp;
+    }
+  });
+})();
+(function(){
+  var cards = document.querySelectorAll('.intro-2col .card');
+  cards.forEach(function(card){
+    card.querySelector('.card-head').addEventListener('click', function(){
+      cards.forEach(function(c){ c.classList.toggle('collapsed'); });
+    });
+  });
+})();
+function autoSave(el, dotId) { var dot = document.getElementById(dotId); if (!dot) return; if (el.value.trim().length > 0) dot.classList.add('saved'); else dot.classList.remove('saved'); }
+function refreshGathered() {
+  var out = document.getElementById('gatheredOutput'); if (!out) return;
+  var lines = [];
+  var nameEl = document.getElementById('student-name'); var name = nameEl ? nameEl.value.trim() : '';
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('  OPTIMA ACADEMY ONLINE — 5TH GRADE SCIENCE');
+  lines.push('  Lesson 3.02 · Model: Matter Made of Particles');
+  lines.push('  Unit 2 — Matter and Its Properties');
+  lines.push('  Student: ' + (name || '(add your name above)'));
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('');
+  function grab(id, label) {
+    var el = document.getElementById(id); var val = el ? el.value.trim() : '';
+    lines.push('--- ' + label + ' ---');
+    lines.push(val || '(not yet answered)');
+    lines.push('');
+  }
+  grab('pred-1',        'PREDICTION');
+  grab('ryt-1',         'INVESTIGATE — Q1: ROCK VS AIR');
+  grab('ryt-2',         'INVESTIGATE — Q2: PERFUME EXPLANATION');
+  grab('ryt-3',         'INVESTIGATE — Q3: MODEL LIMITS');
+  grab('parta-1',       'PART A — SKETCH CAPTIONS');
+  grab('partb-1',       'PART B — Q1: ROCK VS WATER');
+  grab('partb-2',       'PART B — Q2: WHY YOU CAN\'T SEE THEM');
+  grab('partb-3',       'PART B — Q3: WHAT THE MODEL MISSES');
+  grab('cer-claim',     'PART C — CLAIM');
+  grab('cer-evidence',  'PART C — EVIDENCE');
+  grab('cer-reasoning', 'PART C — REASONING');
+  grab('revise-1',      'REVISE YOUR THINKING');
+  out.value = lines.join('\n');
+}
+function copyGathered() {
+  refreshGathered();
+  var out = document.getElementById('gatheredOutput'); out.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  var msg = document.getElementById('copiedMsg');
+  if (msg) { msg.classList.add('show'); setTimeout(function(){ msg.classList.remove('show'); }, 2400); }
+}
+function downloadGathered() {
+  refreshGathered();
+  var text = document.getElementById('gatheredOutput').value;
+  var blob = new Blob([text], {type: 'text/plain'});
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'lesson-3-02-model-matter-made-of-particles.txt';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+document.addEventListener('input', function(e) {
+  if (e.target.classList.contains('response-textarea') || e.target.id === 'student-name') {
+    var panel = document.getElementById('tab-assignment');
+    if (panel && panel.classList.contains('active')) refreshGathered();
+  }
+});
+(function(){
+  var origSwitch = window.switchTab;
+  window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
+})();
+</script>
+</body>
+</html>
